@@ -2,7 +2,8 @@
 titre: Maison de bourg avec balcon
 transaction: À vendre
 statut: Exclusivité
-ville: LES PRADEAUX - 63500
+ville: "LES PRADEAUX "
+code_postal: "63500"
 prix: 117800
 surface: 80
 chambres: 3
