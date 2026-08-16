@@ -9,7 +9,7 @@ prix: 1650
 surface: 216
 chambres: -3
 description: >-
-  Villa neuve contemporaine — Sur les hauteurs d'Issoire
+  Villa neuve contemporaine — Sur les hauteurs d'Issoire 
 
 
   Villa neuve de conception contemporaine, implantée sur les hauteurs d'Issoire, dotée d'un toit terrasse et proposée entièrement meublée. Elle bénéficie d'une isolation renforcée et de matériaux haut de gamme, garants d'un confort thermique et d'une qualité de finition de premier ordre.
