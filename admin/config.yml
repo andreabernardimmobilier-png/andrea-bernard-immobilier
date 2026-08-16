@@ -45,6 +45,8 @@ collections:
       - { label: "Type de transaction", name: "transaction", widget: "select", options: ["À vendre", "À louer"] }
       - { label: "Statut", name: "statut", widget: "select", options: ["Exclusivité", "Nouvelle offre", "Sous compromis", "Sous offre", "Vendu", "Loué"], required: false }
       - { label: "Ville", name: "ville", widget: "string" }
+      - { label: "Code postal", name: "code_postal", widget: "string", required: false }
+      - { label: "DPE", name: "dpe", widget: "select", options: ["A", "B", "C", "D", "E", "F", "G"], required: false }
       - { label: "Prix", name: "prix", widget: "number" }
       - { label: "Surface (m²)", name: "surface", widget: "number", required: false }
       - { label: "Terrain (m²)", name: "terrain", widget: "number", required: false }
