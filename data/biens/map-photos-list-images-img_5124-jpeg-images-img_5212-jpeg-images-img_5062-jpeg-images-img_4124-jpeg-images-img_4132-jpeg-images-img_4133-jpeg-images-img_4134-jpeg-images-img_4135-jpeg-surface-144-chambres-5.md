@@ -3,6 +3,8 @@ titre: Maison individuelle avec double garage et piscine - 144 m2
 transaction: À vendre
 statut: Sous offre
 ville: PERIGNAT-SUR-ALLIER
+code_postal: "63800"
+dpe: C
 prix: 369990
 surface: 144
 terrain: 1077
