@@ -349,7 +349,16 @@
           <div class="tag">${[data.statut, data.transaction].filter(Boolean).join(" — ")}</div>
           <h3>${data.titre || ""}</h3>
           <div class="loc">${data.ville || ""}</div>
-          
-
+          <p class="desc">${data.description || ""}</p>
+          <div class="meta">${meta.join("")}</div>
+          <div class="price">${data.prix ? Number(data.prix).toLocaleString("fr-FR") + " €" : ""}</div>
+        </div>`;
+      grid.appendChild(card);
+    }
+  } catch (e) {
+    console.error("Erreur chargement des biens", e);
+  }
+})();
+</script>
 </body>
 </html>
