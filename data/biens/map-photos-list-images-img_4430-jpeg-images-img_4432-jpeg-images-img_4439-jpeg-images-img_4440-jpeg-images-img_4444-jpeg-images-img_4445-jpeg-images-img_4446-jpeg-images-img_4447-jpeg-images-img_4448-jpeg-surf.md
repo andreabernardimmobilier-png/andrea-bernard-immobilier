@@ -3,6 +3,8 @@ titre: "Appartement F4 - 162 m2 - LE GRAND CARRE DE JAUDE "
 transaction: À vendre
 statut: Exclusivité
 ville: CLERMONT-FERRAND - 63000
+code_postal: "63000"
+dpe: C
 prix: 720000
 surface: 152
 chambres: 3
