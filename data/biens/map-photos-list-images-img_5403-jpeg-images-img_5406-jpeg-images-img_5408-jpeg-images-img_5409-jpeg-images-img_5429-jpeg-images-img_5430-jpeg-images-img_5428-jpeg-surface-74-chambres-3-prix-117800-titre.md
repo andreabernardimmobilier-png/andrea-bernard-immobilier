@@ -4,7 +4,7 @@ transaction: À vendre
 statut: Exclusivité
 ville: LES PRADEAUX - 63500
 prix: 117800
-surface: 74
+surface: 80
 chambres: 3
 description: >-
   Maison de bourg — Les Pradeaux (63500)
@@ -19,10 +19,13 @@ description: >-
   Une maison fonctionnelle, à taille humaine, dans un village du Puy-de-Dôme à taille elle aussi mesurée.
 
 
-  Prix : 117 800 €
+  Prix : 117 800 € Honoraires d'agence inclus
 
 
-  Honoraires à la charge du vendeur. Visites sur rendez-vous.
+  Honoraires à la charge de l'acquéreur. 
+
+
+  N'hesitez pas à nous contacter par téléphone au 06 46 15 07 66 ou par mail : andrea@andreabernardimmobilier.fr
 photos:
   - /images/img_5403.jpeg
   - /images/img_5406.jpeg
