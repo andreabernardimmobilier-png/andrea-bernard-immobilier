@@ -314,6 +314,42 @@
 <footer>
   © Andrea Bernard Immobilier — Issoire — Puy-de-Dôme
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+<script>
+(async function () {
+  const owner = "andreabernardimmobilier-png";
+  const repo = "andrea-bernard-immobilier";
+  const branch = "main";
+  const grid = document.querySelector("#biens .grid");
+  if (!grid) return;
+  try {
+    const listRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/data/biens?ref=${branch}`);
+    if (!listRes.ok) return;
+    const files = await listRes.json();
+    const mdFiles = Array.isArray(files) ? files.filter(f => f.name && f.name.endsWith(".md")) : [];
+    for (const file of mdFiles) {
+      const raw = await (await fetch(file.download_url)).text();
+      const parts = raw.split("---");
+      if (parts.length < 3) continue;
+      const data = jsyaml.load(parts[1]);
+      if (!data) continue;
+      const card = document.createElement("div");
+      card.className = "card";
+      const firstPhoto = (data.photos && data.photos[0]) ? data.photos[0] : "";
+      const img = firstPhoto
+        ? `<img src="${firstPhoto}" alt="${data.titre || ''}" style="width:100%;height:100%;object-fit:cover;">`
+        : "Photo à intégrer";
+      const meta = [];
+      if (data.chambres) meta.push(`<span>${data.chambres} ch.</span>`);
+      if (data.surface) meta.push(`<span>${data.surface} m²</span>`);
+      if (data.terrain) meta.push(`<span>${data.terrain} m² terrain</span>`);
+      card.innerHTML = `
+        <div class="img">${img}</div>
+        <div class="body">
+          <div class="tag">${[data.statut, data.transaction].filter(Boolean).join(" — ")}</div>
+          <h3>${data.titre || ""}</h3>
+          <div class="loc">${data.ville || ""}</div>
+          
 
 </body>
 </html>
