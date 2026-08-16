@@ -23,8 +23,8 @@ description: >-
 photos:
   - /images/img_5124.jpeg
   - /images/img_5212.jpeg
-  - /images/img_5062.jpeg
   - /images/img_4124.jpeg
+  - /images/img_5062.jpeg
   - /images/img_4132.jpeg
   - /images/img_4133.jpeg
   - /images/img_4134.jpeg
