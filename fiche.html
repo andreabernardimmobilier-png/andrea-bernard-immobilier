@@ -54,6 +54,8 @@
     const data = jsyaml.load(parts[1]);
     document.title = (data.titre || "Bien") + " — Andrea Bernard Immobilier";
     const photos = data.photos || [];
+    const dpeColors = {A:"#009B48",B:"#50B848",C:"#AACC00",D:"#FFF200",E:"#FDB813",F:"#F7941E",G:"#ED1C24"};
+    const dpeBadge = data.dpe ? `<span style="display:inline-block;background:${dpeColors[data.dpe]};color:${data.dpe==='D'?'#1a1a1a':'#fff'};font-family:-apple-system,Arial,sans-serif;font-weight:700;font-size:.75rem;padding:3px 10px;border-radius:2px;margin-left:10px;">DPE ${data.dpe}</span>` : "";
     const meta = [];
     if (data.chambres) meta.push(`<span>${data.chambres} chambres</span>`);
     if (data.surface) meta.push(`<span>${data.surface} m²</span>`);
@@ -63,9 +65,10 @@
         <img id="main-photo" src="${photos[0] || ''}" alt="${data.titre || ''}">
         ${photos.length > 1 ? `<div class="gallery-thumbs">${photos.map(p => `<img src="${p}" onclick="document.getElementById('main-photo').src='${p}'">`).join("")}</div>` : ""}
       </div>
-      <div class="tag">${[data.statut, data.transaction].filter(Boolean).join(" — ")}</div>
+      <div class="tag">${[data.statut, data.transaction].filter(Boolean).join(" — ")}${dpeBadge}</div>
       <h1>${data.titre || ""}</h1>
-      <div class="loc">${data.ville || ""}</div>
+      <div class="loc">${data.ville || ""}${data.code_postal ? " (" + data.code_postal + ")" : ""}</div>
+
       <div class="price">${data.prix ? Number(data.prix).toLocaleString("fr-FR") + " €" : ""}</div>
       <div class="meta">${meta.join("")}</div>
       <p class="desc">${data.description || ""}</p>
