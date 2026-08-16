@@ -4,6 +4,7 @@ transaction: À louer
 statut: Loué
 ville: ISSOIRE
 code_postal: "63500"
+dpe: A
 prix: 1650
 surface: 216
 chambres: -3
@@ -26,6 +27,5 @@ photos:
   - /images/img_4903.jpeg
   - /images/img_4908.jpeg
   - /images/img_4909.jpeg
-  - /images/img_4915.jpeg
   - /images/img_4915.jpeg
 ---
