@@ -2,7 +2,9 @@
 titre: "Charmante villa individuelle 158,5 m2 sur 2226 m2 de terrain "
 transaction: À vendre
 statut: Exclusivité
-ville: SAINTE-FLORINE - 43250
+ville: "SAINTE-FLORINE "
+code_postal: "43250"
+dpe: C
 prix: 315000
 surface: 158
 terrain: 2226
