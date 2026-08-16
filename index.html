@@ -353,6 +353,9 @@
           <div class="meta">${meta.join("")}</div>
           <div class="price">${data.prix ? Number(data.prix).toLocaleString("fr-FR") + " €" : ""}</div>
         </div>`;
+          const slug = file.name.replace(/\.md$/, "");
+      card.style.cursor = "pointer";
+      card.onclick = () => { window.location.href = `/fiche.html?slug=${slug}`; };
       grid.appendChild(card);
     }
   } catch (e) {
