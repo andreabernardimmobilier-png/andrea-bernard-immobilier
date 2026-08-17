@@ -25,4 +25,8 @@ description: >-
    T3 : 54,07 m² | 74,33 m²
 photos:
   - /images/img_5926.jpeg
+  - /images/img_7765.jpeg
+  - /images/img_7762.jpeg
+  - /images/img_4797.jpeg
+  - /images/img_4799.jpeg
 ---
