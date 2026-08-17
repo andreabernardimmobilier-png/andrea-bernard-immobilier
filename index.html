@@ -285,57 +285,96 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 <script>
-(async function () {
-  const owner = "andreabernardimmobilier-png";
-  const repo = "andrea-bernard-immobilier";
-  const branch = "main";
-  const grid = document.querySelector("#biens .grid");
-  if (!grid) return;
-  try {
-    const listRes = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/data/biens?ref=${branch}`);
-    if (!listRes.ok) return;
-    const files = await listRes.json();
-    const mdFiles = Array.isArray(files) ? files.filter(f => f.name && f.name.endsWith(".md")) : [];
-    for (const file of mdFiles) {
-      const raw = await (await fetch(file.download_url)).text();
-      const parts = raw.split("---");
-      if (parts.length < 3) continue;
-      const data = jsyaml.load(parts[1]);
-      if (!data) continue;
-      const card = document.createElement("div");
-      card.className = "card";
-      const firstPhoto = (data.photos && data.photos[0]) ? data.photos[0] : "";
-      const img = firstPhoto
-        ? `<img src="${firstPhoto}" alt="${data.titre || ''}" style="width:100%;height:100%;object-fit:cover;">`
-        : "Photo à intégrer";
-      const dpeColors = {A:"#009B48",B:"#50B848",C:"#AACC00",D:"#FFF200",E:"#FDB813",F:"#F7941E",G:"#ED1C24"};
-      const dpeBadge = data.dpe ? `<span style="display:inline-block;background:${dpeColors[data.dpe]};color:${data.dpe==='D'?'#1a1a1a':'#fff'};font-family:-apple-system,Arial,sans-serif;font-weight:700;font-size:.72rem;padding:2px 9px;border-radius:2px;margin-left:10px;">DPE ${data.dpe}</span>` : "";
+  const grid = document.getElementById('listingGrid');
+  const buttons = document.querySelectorAll('#filterToggle button');
+  const countLabel = document.getElementById('countLabel');
+  let allBiens = [];
 
-      const meta = [];
-      if (data.chambres) meta.push(`<span>${data.chambres} ch.</span>`);
-      if (data.surface) meta.push(`<span>${data.surface} m²</span>`);
-      if (data.terrain) meta.push(`<span>${data.terrain} m² terrain</span>`);
-      card.innerHTML = `
-        <div class="img">${img}</div>
+  function renderCards(list) {
+    grid.innerHTML = list.map((b, i) => `
+      <div class="card" data-type="${b.type}">
+        <div class="thumb"><span class="tag">${b.hors_marche ? 'Hors marché' : (b.type === 'vente' ? 'Vente' : 'Location')}</span>
+          <img src="${b.photo}" alt="${b.titre}">
+        </div>
         <div class="body">
-          <div class="tag">${[data.statut, data.transaction].filter(Boolean).join(" — ")}${dpeBadge}</div>
-          <h3>${data.titre || ""}</h3>
-          <div class="loc">${data.ville || ""}${data.code_postal ? " (" + data.code_postal + ")" : ""}</div>
+          <div class="price">${b.prix}</div>
+          <div class="loc">${b.localisation}</div>
+          <div class="title">${b.titre}</div>
+          <div class="meta"><span>${b.surface}</span><span>${b.pieces}</span><span>${b.dpe}</span></div>
+          ${b.description ? `<div class="desc">${b.description}</div>` : ''}
+          <button class="more" data-index="${i}">En savoir plus</button>
+        </div>
+      </div>
+    `).join('');
+    countLabel.textContent = list.length + (list.length > 1 ? ' biens' : ' bien');
 
-          <p class="desc">${data.description || ""}</p>
-          <div class="meta">${meta.join("")}</div>
-          <div class="price">${data.prix ? Number(data.prix).toLocaleString("fr-FR") + " €" : ""}</div>
-        </div>`;
-          const slug = file.name.replace(/\.md$/, "");
-      card.style.cursor = "pointer";
-      card.onclick = () => { window.location.href = `/fiche.html?slug=${slug}`; };
-      grid.appendChild(card);
-    }
-  } catch (e) {
-    console.error("Erreur chargement des biens", e);
+    document.querySelectorAll('.more').forEach(btn => {
+      btn.addEventListener('click', () => openModal(list[parseInt(btn.dataset.index)]));
+    });
   }
-})();
+
+  function applyFilter(filter) {
+    const filtered = filter === 'all' ? allBiens : allBiens.filter(b => b.type === filter);
+    renderCards(filtered);
+  }
+
+  fetch('data/listings.json')
+    .then(r => r.json())
+    .then(data => {
+      allBiens = data.biens || [];
+      renderCards(allBiens);
+    })
+    .catch(() => {
+      grid.innerHTML = '<p style="padding:40px;color:var(--ink-soft);">Impossible de charger les biens pour le moment.</p>';
+    });
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyFilter(btn.dataset.filter);
+    });
+  });
+
+  /* --- Fenêtre modale --- */
+  const overlay = document.getElementById('modalOverlay');
+
+  function openModal(b) {
+    overlay.innerHTML = `
+      <div class="modal">
+        <div class="modal-photo">
+          <span class="modal-tag">${b.hors_marche ? 'Hors marché' : (b.type === 'vente' ? 'Vente' : 'Location')}</span>
+          <button class="modal-close" aria-label="Fermer">&times;</button>
+          <img src="${b.photo}" alt="${b.titre}">
+        </div>
+        <div class="modal-body">
+          <div class="modal-price">${b.prix}</div>
+          <div class="modal-loc">${b.localisation}</div>
+          <div class="modal-title">${b.titre}</div>
+          <div class="modal-meta"><span>${b.surface}</span><span>${b.pieces}</span><span>${b.dpe}</span></div>
+          ${b.description ? `<div class="modal-desc">${b.description}</div>` : ''}
+        </div>
+      </div>
+    `;
+    overlay.classList.add('open');
+    document.body.classList.add('modal-lock');
+    overlay.querySelector('.modal-close').addEventListener('click', closeModal);
+  }
+
+  function closeModal() {
+    overlay.classList.remove('open');
+    document.body.classList.remove('modal-lock');
+    overlay.innerHTML = '';
+  }
+
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeModal();
+  });
 </script>
+
 <div class="modal-overlay" id="modalOverlay"></div>
 </body>
 </html>
