@@ -26,4 +26,10 @@ description: >-
   Un bien à revenus établis, offrant une double exploitation commerciale et résidentielle au sein d'un même actif.
 photos:
   - /images/img_9189.jpeg
+  - /images/img_9193.jpeg
+  - /images/img_9396.jpeg
+  - /images/img_9397.jpeg
+  - /images/img_9411.jpeg
+  - /images/img_9415.jpeg
+  - /images/img_9413.jpeg
 ---
