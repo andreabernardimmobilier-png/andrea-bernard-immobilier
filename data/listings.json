@@ -1,0 +1,16 @@
+{
+  "biens": [
+    {
+      "titre": "Appartement F4 avec terrasse, vue dégagée",
+      "type": "vente",
+      "hors_marche": false,
+      "prix": "495 000 €",
+      "localisation": "Clermont-Ferrand · Jaude",
+      "surface": "108 m²",
+      "pieces": "4 pièces",
+      "dpe": "DPE C",
+      "description": "",
+      "photo": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=900&auto=format&fit=crop"
+    }
+  ]
+}
