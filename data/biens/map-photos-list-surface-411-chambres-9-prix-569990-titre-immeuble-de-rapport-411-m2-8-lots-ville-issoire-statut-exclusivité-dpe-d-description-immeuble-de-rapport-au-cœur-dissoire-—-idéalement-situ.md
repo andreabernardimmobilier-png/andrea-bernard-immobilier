@@ -23,5 +23,6 @@ description: >-
    Studio : 22,15 m²
    T2 : 43,24 m² | 51,14 m² | 52,21 m² | 53,37 m² | 60,62 m²
    T3 : 54,07 m² | 74,33 m²
-photos: []
+photos:
+  - /images/img_5926.jpeg
 ---
