@@ -267,9 +267,9 @@ body.modal-lock{overflow:hidden;}
   const overlay = document.getElementById('modalOverlay');
   let allBiens = [];
 
-  function renderCards(list) {
+    function renderCards(list) {
     grid.innerHTML = list.map((b, i) => `
-      <div class="card" data-type="${b.type}" style="animation-delay:${i * 80}ms">
+      <div class="card" data-type="${b.type}" data-index="${i}" style="animation-delay:${i * 80}ms;cursor:pointer;">
         <div class="thumb">
           <img src="${b.photo}" alt="${b.titre}">
         </div>
@@ -285,8 +285,8 @@ body.modal-lock{overflow:hidden;}
       </div>
     `).join('');
     countLabel.textContent = list.length + (list.length > 1 ? ' biens' : ' bien');
-    document.querySelectorAll('.more').forEach(btn => {
-      btn.addEventListener('click', () => openModal(list[parseInt(btn.dataset.index)]));
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('click', () => openModal(list[parseInt(card.dataset.index)]));
     });
   }
 
