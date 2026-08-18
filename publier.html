@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publier une annonce — Andrea Bernard Immobilier</title>
+<style>
+  :root{
+    --navy:#0f1f38; --gold:#b98d3e; --gold-light:#d4af6a;
+    --cream:#f7f5f1; --ink:#1a1a1a; --muted:#6b6b6b; --line:#e3ddd1;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:var(--cream);color:var(--ink);margin:0;padding:0;}
+  header{background:var(--navy);color:#fff;padding:24px;text-align:center;}
+  header h1{font-size:1.2rem;font-weight:500;letter-spacing:.02em;margin:0;}
+  header p{font-size:.8rem;color:#c8cbd4;margin:6px 0 0;}
+  .wrap{max-width:640px;margin:0 auto;padding:28px 20px 80px;}
+  .box{background:#fff;border:1px solid var(--line);padding:24px;margin-bottom:24px;}
+  .box h2{font-size:1rem;margin:0 0 16px;color:var(--navy);}
+  label{display:block;font-size:.78rem;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;margin-top:16px;}
+  label:first-of-type{margin-top:0;}
+  input, select, textarea{
+    width:100%;padding:10px 12px;border:1px solid var(--line);background:#fff;
+    font-family:inherit;font-size:.95rem;color:var(--ink);
+  }
+  input:focus, select:focus, textarea:focus{outline:none;border-color:var(--gold);}
+  textarea{resize:vertical;min-height:90px;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .checkbox-row{display:flex;align-items:center;gap:8px;margin-top:16px;}
+  .checkbox-row input{width:auto;}
+  .checkbox-row label{margin:0;text-transform:none;font-size:.9rem;letter-spacing:0;}
+  button{
+    width:100%;padding:14px;background:var(--navy);color:#fff;border:none;
+    font-family:inherit;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;
+    cursor:pointer;margin-top:20px;transition:background .2s;
+  }
+  button:hover{background:#1c3358;}
+  button:disabled{opacity:.5;cursor:not-allowed;}
+  .status{margin-top:14px;padding:12px 14px;font-size:.85rem;display:none;}
+  .status.ok{display:block;background:#e6f4ea;color:#1e7e34;border:1px solid #b7dfc2;}
+  .status.err{display:block;background:#fbe9e9;color:#a32020;border:1px solid #f0c2c2;}
+  .status.pending{display:block;background:#fff6e0;color:#8a6100;border:1px solid #f0dca0;}
+  .hint{font-size:.78rem;color:var(--muted);margin-top:6px;}
+  .existing{border-bottom:1px solid var(--line);padding:14px 0;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+  .existing:last-child{border-bottom:none;}
+  .existing .info{font-size:.85rem;}
+  .existing .info b{display:block;color:var(--navy);}
+  .existing button{width:auto;margin:0;padding:8px 14px;background:#a32020;font-size:.72rem;}
+  .existing button:hover{background:#8a1a1a;}
+  .token-status{font-size:.8rem;color:var(--muted);margin-top:8px;}
+  .token-status.set{color:#1e7e34;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Andrea Bernard Immobilier</h1>
+  <p>Interface de publication des annonces</p>
+</header>
+
+<div class="wrap">
+
+  <div class="box" id="tokenBox">
+    <h2>Connexion</h2>
+    <label>Clé d'accès GitHub (Personal Access Token)</label>
+    <input type="password" id="tokenInput" placeholder="ghp_...">
+    <div class="hint">À configurer une seule fois sur cet appareil. Voir la procédure de création plus bas.</div>
+    <button id="saveTokenBtn" type="button">Enregistrer la clé</button>
+    <div class="token-status" id="tokenStatus">Aucune clé enregistrée sur cet appareil.</div>
+  </div>
+
+  <div class="box">
+    <h2>Nouvelle annonce</h2>
+    <form id="listingForm">
+      <label>Titre</label>
+      <input type="text" id="f_titre" required placeholder="Ex. Villa contemporaine avec piscine">
+
+      <div class="row2">
+        <div>
+          <label>Type</label>
+          <select id="f_type">
+            <option value="vente">Vente</option>
+            <option value="location">Location</option>
+          </select>
+        </div>
+        <div>
+          <label>Prix</label>
+          <input type="text" id="f_prix" required placeholder="Ex. 495 000 € ou 1 250 € / mois">
+        </div>
+      </div>
+
+      <div class="row2">
+        <div>
+          <label>Ville</label>
+          <input type="text" id="f_ville" required placeholder="Ex. Issoire">
+        </div>
+        <div>
+          <label>Code postal</label>
+          <input type="text" id="f_cp" placeholder="Ex. 63500">
+        </div>
+      </div>
+
+      <div class="row2">
+        <div>
+          <label>Surface habitable</label>
+          <input type="text" id="f_surface" placeholder="Ex. 120 m²">
+        </div>
+        <div>
+          <label>Surface parcelle</label>
+          <input type="text" id="f_parcelle" placeholder="Ex. 2 226 m²">
+        </div>
+      </div>
+
+      <div class="row2">
+        <div>
+          <label>Chambres</label>
+          <input type="text" id="f_chambres" placeholder="Ex. 4">
+        </div>
+        <div>
+          <label>Salles de bains</label>
+          <input type="text" id="f_sdb" placeholder="Ex. 2">
+        </div>
+      </div>
+
+      <div class="row2">
+        <div>
+          <label>Chauffage</label>
+          <input type="text" id="f_chauffage" placeholder="Ex. Pompe à chaleur">
+        </div>
+        <div>
+          <label>DPE</label>
+          <input type="text" id="f_dpe" placeholder="Ex. DPE C">
+        </div>
+      </div>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="f_horsmarche">
+        <label for="f_horsmarche">Bien hors marché</label>
+      </div>
+
+      <label>Description</label>
+      <textarea id="f_description" placeholder="Texte complet de l'annonce"></textarea>
+
+      <label>Photos</label>
+      <input type="file" id="f_photo" accept="image/*" multiple>
+      <div class="hint">Sélectionnez plusieurs photos à la fois (Cmd/Ctrl + clic, ou glisser-déposer). La première sera utilisée comme photo principale.</div>
+
+      <button type="submit" id="submitBtn">Publier l'annonce</button>
+      <div class="status" id="formStatus"></div>
+    </form>
+  </div>
+
+  <div class="box">
+    <h2>Annonces publiées</h2>
+    <div id="existingList">
+      <div class="hint">Chargement...</div>
+    </div>
+  </div>
+
+  <div class="box">
+    <h2>Comment obtenir votre clé d'accès (une seule fois)</h2>
+    <ol style="font-size:.85rem;color:var(--muted);padding-left:20px;line-height:1.7;">
+      <li>Allez sur <b>github.com/settings/tokens?type=beta</b></li>
+      <li>Tapez sur <b>"Generate new token"</b></li>
+      <li>Nom : "Publication annonces"</li>
+      <li>Expiration : au choix (1 an conseillé)</li>
+      <li>Repository access → <b>"Only select repositories"</b> → choisissez <b>andrea-bernard-immobilier</b></li>
+      <li>Permissions → <b>Contents</b> → passez sur <b>"Read and write"</b></li>
+      <li>Générez, copiez la clé (elle commence par <b>github_pat_</b>), collez-la ci-dessus</li>
+    </ol>
+  </div>
+
+</div>
+
+<script>
+  const OWNER = 'andreabernardimmobilier-png';
+  const REPO = 'andrea-bernard-immobilier';
+  const BRANCH = 'main';
+  const API = `https://api.github.com/repos/${OWNER}/${REPO}`;
+
+  const tokenInput = document.getElementById('tokenInput');
+  const tokenStatus = document.getElementById('tokenStatus');
+  const saveTokenBtn = document.getElementById('saveTokenBtn');
+
+  function getToken(){ return localStorage.getItem('abi_gh_token') || ''; }
+  function refreshTokenStatus(){
+    const t = getToken();
+    if(t){
+      tokenStatus.textContent = 'Clé enregistrée sur cet appareil.';
+      tokenStatus.classList.add('set');
+      tokenInput.value = t;
+    } else {
+      tokenStatus.textContent = 'Aucune clé enregistrée sur cet appareil.';
+      tokenStatus.classList.remove('set');
+    }
+  }
+  saveTokenBtn.addEventListener('click', () => {
+    const v = tokenInput.value.trim();
+    if(!v){ alert('Collez votre clé avant d\'enregistrer.'); return; }
+    localStorage.setItem('abi_gh_token', v);
+    refreshTokenStatus();
+    loadExisting();
+  });
+  refreshTokenStatus();
+
+  function ghHeaders(){
+    return {
+      'Authorization': `Bearer ${getToken()}`,
+      'Accept': 'application/vnd.github+json'
+    };
+  }
+
+  async function getListingsFile(){
+    const res = await fetch(`${API}/contents/data/listings.json?ref=${BRANCH}`, { headers: ghHeaders() });
+    if(!res.ok) throw new Error('Impossible de lire listings.json (' + res.status + ')');
+    const data = await res.json();
+    const content = decodeURIComponent(escape(atob(data.content.replace(/\n/g,''))));
+    return { json: JSON.parse(content), sha: data.sha };
+  }
+
+  async function putListingsFile(json, sha, message){
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(json, null, 2))));
+    const res = await fetch(`${API}/contents/data/listings.json`, {
+      method: 'PUT',
+      headers: { ...ghHeaders(), 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message, content, sha, branch: BRANCH })
+    });
+    if(!res.ok){
+      const err = await res.json().catch(() => ({}));
+      throw new Error('Échec de la publication (' + res.status + ') ' + (err.message || ''));
+    }
+    return res.json();
+  }
+
+  async function uploadImage(file){
+    const bytes = await file.arrayBuffer();
+    let binary = '';
+    const arr = new Uint8Array(bytes);
+    for(let i=0;i<arr.length;i++) binary += String.fromCharCode(arr[i]);
+    const base64 = btoa(binary);
+    const safeName = Date.now() + '-' + file.name.replace(/[^a-zA-Z0-9.\-]/g,'_');
+    const path = `images/${safeName}`;
+    const res = await fetch(`${API}/contents/${path}`, {
+      method: 'PUT',
+      headers: { ...ghHeaders(), 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: `Ajout photo ${safeName}`, content: base64, branch: BRANCH })
+    });
+    if(!res.ok){
+      const err = await res.json().catch(() => ({}));
+      throw new Error('Échec upload photo (' + res.status + ') ' + (err.message || ''));
+    }
+    return `images/${safeName}`;
+  }
+
+  function setStatus(msg, type){
+    const el = document.getElementById('formStatus');
+    el.textContent = msg;
+    el.className = 'status ' + type;
+  }
+
+  document.getElementById('listingForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if(!getToken()){ alert('Configurez d\'abord votre clé d\'accès en haut de page.'); return; }
+
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+    setStatus('Publication en cours...', 'pending');
+
+    try {
+      const photoFiles = Array.from(document.getElementById('f_photo').files);
+      let photoPaths = [];
+      if(photoFiles.length){
+        for(let i=0;i<photoFiles.length;i++){
+          setStatus(`Envoi de la photo ${i+1}/${photoFiles.length}...`, 'pending');
+          const path = await uploadImage(photoFiles[i]);
+          photoPaths.push(path);
+        }
+      }
+
+      const newListing = {
+        titre: document.getElementById('f_titre').value.trim(),
+        type: document.getElementById('f_type').value,
+        prix: document.getElementById('f_prix').value.trim(),
+        localisation: document.getElementById('f_ville').value.trim() + (document.getElementById('f_cp').value.trim() ? ' · ' + document.getElementById('f_cp').value.trim() : ''),
+        surface: document.getElementById('f_surface').value.trim(),
+        surface_parcelle: document.getElementById('f_parcelle').value.trim(),
+        chambres: document.getElementById('f_chambres').value.trim(),
+        salles_de_bain: document.getElementById('f_sdb').value.trim(),
+        chauffage: document.getElementById('f_chauffage').value.trim(),
+        pieces: document.getElementById('f_chambres').value.trim() ? document.getElementById('f_chambres').value.trim() + ' chambres' : '',
+        dpe: document.getElementById('f_dpe').value.trim(),
+        hors_marche: document.getElementById('f_horsmarche').checked,
+        description: document.getElementById('f_description').value.trim(),
+        photo: photoPaths[0] || '',
+        photos: photoPaths
+      };
+
+      setStatus('Mise à jour de la liste des biens...', 'pending');
+      const { json, sha } = await getListingsFile();
+      json.biens = json.biens || [];
+      json.biens.unshift(newListing);
+      await putListingsFile(json, sha, `Ajout annonce: ${newListing.titre}`);
+
+      setStatus('Annonce publiée. Le site se met à jour en 1 à 2 minutes.', 'ok');
+      document.getElementById('listingForm').reset();
+      loadExisting();
+    } catch(err){
+      setStatus('Erreur : ' + err.message, 'err');
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+
+  async function loadExisting(){
+    const listEl = document.getElementById('existingList');
+    if(!getToken()){
+      listEl.innerHTML = '<div class="hint">Configurez votre clé d\'accès pour voir vos annonces.</div>';
+      return;
+    }
+    try {
+      const { json } = await getListingsFile();
+      const biens = json.biens || [];
+      if(biens.length === 0){
+        listEl.innerHTML = '<div class="hint">Aucune annonce publiée pour le moment.</div>';
+        return;
+      }
+      listEl.innerHTML = biens.map((b, i) => `
+        <div class="existing">
+          <div class="info"><b>${b.titre || '(sans titre)'}</b>${b.prix || ''} — ${b.localisation || ''}</div>
+          <button type="button" data-index="${i}" class="delBtn">Supprimer</button>
+        </div>
+      `).join('');
+      document.querySelectorAll('.delBtn').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          if(!confirm('Supprimer cette annonce ?')) return;
+          btn.disabled = true;
+          try {
+            const { json, sha } = await getListingsFile();
+            json.biens.splice(parseInt(btn.dataset.index), 1);
+            await putListingsFile(json, sha, 'Suppression annonce');
+            loadExisting();
+          } catch(err){
+            alert('Erreur : ' + err.message);
+            btn.disabled = false;
+          }
+        });
+      });
+    } catch(err){
+      listEl.innerHTML = '<div class="hint">Erreur de chargement : ' + err.message + '</div>';
+    }
+  }
+  loadExisting();
+</script>
+
+</body>
+</html>
