@@ -126,6 +126,10 @@ footer{background:#0a1626;color:#6b7386;padding:26px 24px;text-align:center;font
 .modal-overlay.open .modal{transform:scale(1) translateY(0);opacity:1;}
 .modal .modal-photo{height:360px;position:relative;background:#dcd6c8;}
 .modal .modal-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.modal .modal-thumbs{display:flex;gap:6px;padding:10px 12px;background:#f3f0ea;overflow-x:auto;}
+.modal .modal-thumb{width:60px;height:60px;object-fit:cover;flex-shrink:0;cursor:pointer;opacity:.55;transition:opacity .2s;border:2px solid transparent;}
+.modal .modal-thumb.active{opacity:1;border-color:var(--gold);}
+.modal .modal-thumb:hover{opacity:1;}
 .modal .modal-close{position:absolute;top:18px;right:18px;background:var(--navy);color:#fff;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;border:none;}
 .modal .modal-tag{position:absolute;top:18px;left:18px;background:var(--navy);color:var(--gold-light);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding:6px 12px;font-family:-apple-system,Arial,sans-serif;}
 .modal .modal-body{padding:40px;}
@@ -199,8 +203,7 @@ body.modal-lock{overflow:hidden;}
   <div class="section-head">
     <div class="eyebrow">Témoignages</div>
     <h2>Ce qu'en disent nos clients</h2>
-  <a href="https://maps.app.goo.gl/xm4E5hdxybowaFV6A" target="_blank" rel="noopener" class="sans" style="display:block;width:fit-content;margin:14px auto 0;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:2px;">Voir tous nos avis sur Google</a>
-
+    <a href="https://maps.app.goo.gl/xm4E5hdxybowaFV6A" target="_blank" rel="noopener" class="sans" style="display:block;width:fit-content;margin:14px auto 0;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:2px;">Voir tous nos avis sur Google</a>
   </div>
   <div class="grid">
     <div class="avis-card">
@@ -267,7 +270,7 @@ body.modal-lock{overflow:hidden;}
   const overlay = document.getElementById('modalOverlay');
   let allBiens = [];
 
-    function renderCards(list) {
+  function renderCards(list) {
     grid.innerHTML = list.map((b, i) => `
       <div class="card" data-type="${b.type}" data-index="${i}" style="animation-delay:${i * 80}ms;cursor:pointer;">
         <div class="thumb">
@@ -326,18 +329,30 @@ body.modal-lock{overflow:hidden;}
   window.addEventListener('load', () => moveIndicator(document.querySelector('.filter-tab.active')));
 
   function openModal(b) {
+    const photos = (b.photos && b.photos.length) ? b.photos : [b.photo];
+    const details = [
+      b.surface, b.pieces, b.dpe,
+      b.chambres ? b.chambres + ' chambres' : '',
+      b.salles_de_bain ? b.salles_de_bain + ' salles de bain' : '',
+      b.surface_parcelle ? 'Terrain ' + b.surface_parcelle : '',
+      b.chauffage ? 'Chauffage : ' + b.chauffage : ''
+    ].filter(Boolean);
     overlay.innerHTML = `
       <div class="modal">
         <div class="modal-photo">
           <span class="modal-tag">${b.hors_marche ? 'Hors marché' : (b.type === 'vente' ? 'Vente' : 'Location')}</span>
           <button class="modal-close" aria-label="Fermer">&times;</button>
-          <img src="${b.photo}" alt="${b.titre}">
+          <img src="${photos[0]}" alt="${b.titre}" id="modalMainImg">
         </div>
+        ${photos.length > 1 ? `
+        <div class="modal-thumbs">
+          ${photos.map((p, i) => `<img src="${p}" class="modal-thumb${i===0?' active':''}" data-src="${p}">`).join('')}
+        </div>` : ''}
         <div class="modal-body">
           <div class="modal-price">${b.prix}</div>
           <div class="modal-loc">${b.localisation}</div>
           <div class="modal-title">${b.titre}</div>
-          <div class="modal-meta"><span>${b.surface}</span><span>${b.pieces}</span><span>${b.dpe}</span></div>
+          <div class="modal-meta">${details.map(d => `<span>${d}</span>`).join('')}</div>
           ${b.description ? `<div class="modal-desc">${b.description}</div>` : ''}
         </div>
       </div>
@@ -345,6 +360,13 @@ body.modal-lock{overflow:hidden;}
     overlay.classList.add('open');
     document.body.classList.add('modal-lock');
     overlay.querySelector('.modal-close').addEventListener('click', closeModal);
+    overlay.querySelectorAll('.modal-thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        document.getElementById('modalMainImg').src = thumb.dataset.src;
+        overlay.querySelectorAll('.modal-thumb').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+    });
   }
 
   function closeModal() {
