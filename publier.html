@@ -225,7 +225,7 @@
   }
 
   async function getListingsFile(){
-    const res = await fetch(`${API}/contents/data/listings.json?ref=${BRANCH}`, { headers: ghHeaders() });
+    const res = await fetch(`${API}/contents/data/listings.json?ref=${BRANCH}&t=${Date.now()}`, { headers: ghHeaders(), cache: 'no-store' });
     if(!res.ok) throw new Error('Impossible de lire listings.json (' + res.status + ')');
     const data = await res.json();
     const content = decodeURIComponent(escape(atob(data.content.replace(/\n/g,''))));
@@ -316,23 +316,40 @@
       };
 
       setStatus('Mise à jour de la liste des biens...', 'pending');
-      const { json, sha } = await getListingsFile();
+      let attempt = await getListingsFile();
+      let json = attempt.json, sha = attempt.sha;
       json.biens = json.biens || [];
 
-      if (editIndex !== '') {
-        const existing = json.biens[parseInt(editIndex)] || {};
-        newListing.photos = photoPaths.length ? photoPaths : (existing.photos || []);
-        newListing.photo = newListing.photos[0] || existing.photo || '';
-        json.biens[parseInt(editIndex)] = newListing;
-        await putListingsFile(json, sha, `Modification annonce: ${newListing.titre}`);
-        setStatus('Annonce mise à jour. Le site se met à jour en 1 à 2 minutes.', 'ok');
-      } else {
-        newListing.photo = photoPaths[0] || '';
-        newListing.photos = photoPaths;
-        json.biens.unshift(newListing);
-        await putListingsFile(json, sha, `Ajout annonce: ${newListing.titre}`);
-        setStatus('Annonce publiée. Le site se met à jour en 1 à 2 minutes.', 'ok');
+      async function applyAndSave(){
+        if (editIndex !== '') {
+          const existing = json.biens[parseInt(editIndex)] || {};
+          newListing.photos = photoPaths.length ? photoPaths : (existing.photos || []);
+          newListing.photo = newListing.photos[0] || existing.photo || '';
+          json.biens[parseInt(editIndex)] = newListing;
+          return putListingsFile(json, sha, `Modification annonce: ${newListing.titre}`);
+        } else {
+          newListing.photo = photoPaths[0] || '';
+          newListing.photos = photoPaths;
+          json.biens.unshift(newListing);
+          return putListingsFile(json, sha, `Ajout annonce: ${newListing.titre}`);
+        }
       }
+
+      try {
+        await applyAndSave();
+      } catch (err) {
+        if (String(err.message).includes('409')) {
+          setStatus('Nouvelle tentative (le fichier venait d\'être mis à jour)...', 'pending');
+          const retry = await getListingsFile();
+          json = retry.json; sha = retry.sha;
+          json.biens = json.biens || [];
+          await applyAndSave();
+        } else {
+          throw err;
+        }
+      }
+
+      setStatus(editIndex !== '' ? 'Annonce mise à jour. Le site se met à jour en 1 à 2 minutes.' : 'Annonce publiée. Le site se met à jour en 1 à 2 minutes.', 'ok');
 
       resetForm();
       loadExisting();
