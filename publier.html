@@ -279,6 +279,16 @@
     return v;
   }
 
+  function withEuro(val, type){
+    const v = (val || '').trim();
+    if (!v) return v;
+    if (/^\d+([.,]\d+)?$/.test(v)) {
+      const formatted = v.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+      return formatted + ' €' + (type === 'location' ? ' / mois' : '');
+    }
+    return v;
+  }
+
   document.getElementById('listingForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     if(!getToken()){ alert('Configurez d\'abord votre clé d\'accès en haut de page.'); return; }
@@ -303,7 +313,7 @@
         titre: document.getElementById('f_titre').value.trim(),
         type: document.getElementById('f_type').value,
         statut: document.getElementById('f_statut').value,
-        prix: document.getElementById('f_prix').value.trim(),
+        prix: withEuro(document.getElementById('f_prix').value, document.getElementById('f_type').value),
         localisation: document.getElementById('f_ville').value.trim() + (document.getElementById('f_cp').value.trim() ? ' · ' + document.getElementById('f_cp').value.trim() : ''),
         surface: withM2(document.getElementById('f_surface').value),
         surface_parcelle: withM2(document.getElementById('f_parcelle').value),
