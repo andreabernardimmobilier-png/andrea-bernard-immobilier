@@ -70,8 +70,10 @@
   </div>
 
   <div class="box">
-    <h2>Nouvelle annonce</h2>
+    <h2>Nouvelle annonce / Modifier</h2>
+    <div class="hint" id="editingNotice" style="display:none;margin-bottom:14px;padding:10px 14px;background:#fff6e0;border:1px solid #f0dca0;color:#8a6100;"></div>
     <form id="listingForm">
+      <input type="hidden" id="f_editIndex" value="">
       <label>Titre</label>
       <input type="text" id="f_titre" required placeholder="Ex. Villa contemporaine avec piscine">
 
@@ -84,10 +86,21 @@
           </select>
         </div>
         <div>
-          <label>Prix</label>
-          <input type="text" id="f_prix" required placeholder="Ex. 495 000 € ou 1 250 € / mois">
+          <label>Statut</label>
+          <select id="f_statut">
+            <option value="">Aucun</option>
+            <option value="Exclusivité">Exclusivité</option>
+            <option value="Nouvelle offre">Nouvelle offre</option>
+            <option value="Sous offre">Sous offre</option>
+            <option value="Sous compromis">Sous compromis</option>
+            <option value="Vendu">Vendu</option>
+            <option value="Loué">Loué</option>
+          </select>
         </div>
       </div>
+
+      <label>Prix</label>
+      <input type="text" id="f_prix" required placeholder="Ex. 495 000 € ou 1 250 € / mois">
 
       <div class="row2">
         <div>
@@ -146,6 +159,7 @@
       <div class="hint">Sélectionnez plusieurs photos à la fois (Cmd/Ctrl + clic, ou glisser-déposer). La première sera utilisée comme photo principale.</div>
 
       <button type="submit" id="submitBtn">Publier l'annonce</button>
+      <button type="button" id="cancelEditBtn" style="display:none;background:none;color:var(--muted);border:1px solid var(--line);margin-top:10px;">Annuler la modification</button>
       <div class="status" id="formStatus"></div>
     </form>
   </div>
@@ -258,13 +272,21 @@
     el.className = 'status ' + type;
   }
 
+  function withM2(val){
+    const v = (val || '').trim();
+    if (!v) return v;
+    if (/^\d+([.,]\d+)?$/.test(v)) return v + ' m²';
+    return v;
+  }
+
   document.getElementById('listingForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     if(!getToken()){ alert('Configurez d\'abord votre clé d\'accès en haut de page.'); return; }
 
     const submitBtn = document.getElementById('submitBtn');
     submitBtn.disabled = true;
-    setStatus('Publication en cours...', 'pending');
+    const editIndex = document.getElementById('f_editIndex').value;
+    setStatus(editIndex ? 'Mise à jour en cours...' : 'Publication en cours...', 'pending');
 
     try {
       const photoFiles = Array.from(document.getElementById('f_photo').files);
@@ -280,29 +302,39 @@
       const newListing = {
         titre: document.getElementById('f_titre').value.trim(),
         type: document.getElementById('f_type').value,
+        statut: document.getElementById('f_statut').value,
         prix: document.getElementById('f_prix').value.trim(),
         localisation: document.getElementById('f_ville').value.trim() + (document.getElementById('f_cp').value.trim() ? ' · ' + document.getElementById('f_cp').value.trim() : ''),
-        surface: document.getElementById('f_surface').value.trim(),
-        surface_parcelle: document.getElementById('f_parcelle').value.trim(),
+        surface: withM2(document.getElementById('f_surface').value),
+        surface_parcelle: withM2(document.getElementById('f_parcelle').value),
         chambres: document.getElementById('f_chambres').value.trim(),
         salles_de_bain: document.getElementById('f_sdb').value.trim(),
         chauffage: document.getElementById('f_chauffage').value.trim(),
-        pieces: document.getElementById('f_chambres').value.trim() ? document.getElementById('f_chambres').value.trim() + ' chambres' : '',
         dpe: document.getElementById('f_dpe').value.trim(),
         hors_marche: document.getElementById('f_horsmarche').checked,
         description: document.getElementById('f_description').value.trim(),
-        photo: photoPaths[0] || '',
-        photos: photoPaths
       };
 
       setStatus('Mise à jour de la liste des biens...', 'pending');
       const { json, sha } = await getListingsFile();
       json.biens = json.biens || [];
-      json.biens.unshift(newListing);
-      await putListingsFile(json, sha, `Ajout annonce: ${newListing.titre}`);
 
-      setStatus('Annonce publiée. Le site se met à jour en 1 à 2 minutes.', 'ok');
-      document.getElementById('listingForm').reset();
+      if (editIndex !== '') {
+        const existing = json.biens[parseInt(editIndex)] || {};
+        newListing.photos = photoPaths.length ? photoPaths : (existing.photos || []);
+        newListing.photo = newListing.photos[0] || existing.photo || '';
+        json.biens[parseInt(editIndex)] = newListing;
+        await putListingsFile(json, sha, `Modification annonce: ${newListing.titre}`);
+        setStatus('Annonce mise à jour. Le site se met à jour en 1 à 2 minutes.', 'ok');
+      } else {
+        newListing.photo = photoPaths[0] || '';
+        newListing.photos = photoPaths;
+        json.biens.unshift(newListing);
+        await putListingsFile(json, sha, `Ajout annonce: ${newListing.titre}`);
+        setStatus('Annonce publiée. Le site se met à jour en 1 à 2 minutes.', 'ok');
+      }
+
+      resetForm();
       loadExisting();
     } catch(err){
       setStatus('Erreur : ' + err.message, 'err');
@@ -311,6 +343,40 @@
     }
   });
 
+  function resetForm(){
+    document.getElementById('listingForm').reset();
+    document.getElementById('f_editIndex').value = '';
+    document.getElementById('editingNotice').style.display = 'none';
+    document.getElementById('cancelEditBtn').style.display = 'none';
+    document.getElementById('submitBtn').textContent = "Publier l'annonce";
+  }
+  document.getElementById('cancelEditBtn').addEventListener('click', resetForm);
+
+  function startEdit(b, index){
+    document.getElementById('f_editIndex').value = index;
+    document.getElementById('f_titre').value = b.titre || '';
+    document.getElementById('f_type').value = b.type || 'vente';
+    document.getElementById('f_statut').value = b.statut || '';
+    document.getElementById('f_prix').value = b.prix || '';
+    const locParts = (b.localisation || '').split(' · ');
+    document.getElementById('f_ville').value = locParts[0] || '';
+    document.getElementById('f_cp').value = locParts[1] || '';
+    document.getElementById('f_surface').value = b.surface || '';
+    document.getElementById('f_parcelle').value = b.surface_parcelle || '';
+    document.getElementById('f_chambres').value = b.chambres || '';
+    document.getElementById('f_sdb').value = b.salles_de_bain || '';
+    document.getElementById('f_chauffage').value = b.chauffage || '';
+    document.getElementById('f_dpe').value = b.dpe || '';
+    document.getElementById('f_horsmarche').checked = !!b.hors_marche;
+    document.getElementById('f_description').value = b.description || '';
+    document.getElementById('editingNotice').style.display = 'block';
+    document.getElementById('editingNotice').textContent = `Modification de : ${b.titre || '(sans titre)'} — laissez le champ photos vide pour garder les photos actuelles, ou sélectionnez-en de nouvelles pour les remplacer.`;
+    document.getElementById('cancelEditBtn').style.display = 'block';
+    document.getElementById('submitBtn').textContent = "Enregistrer les modifications";
+    window.scrollTo({top: document.getElementById('listingForm').offsetTop - 20, behavior: 'smooth'});
+  }
+
+  let currentBiens = [];
   async function loadExisting(){
     const listEl = document.getElementById('existingList');
     if(!getToken()){
@@ -320,6 +386,7 @@
     try {
       const { json } = await getListingsFile();
       const biens = json.biens || [];
+      currentBiens = biens;
       if(biens.length === 0){
         listEl.innerHTML = '<div class="hint">Aucune annonce publiée pour le moment.</div>';
         return;
@@ -327,9 +394,18 @@
       listEl.innerHTML = biens.map((b, i) => `
         <div class="existing">
           <div class="info"><b>${b.titre || '(sans titre)'}</b>${b.prix || ''} — ${b.localisation || ''}</div>
-          <button type="button" data-index="${i}" class="delBtn">Supprimer</button>
+          <div style="display:flex;gap:8px;flex-shrink:0;">
+            <button type="button" data-index="${i}" class="editBtn" style="background:var(--navy);">Modifier</button>
+            <button type="button" data-index="${i}" class="delBtn">Supprimer</button>
+          </div>
         </div>
       `).join('');
+      document.querySelectorAll('.editBtn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const i = parseInt(btn.dataset.index);
+          startEdit(currentBiens[i], i);
+        });
+      });
       document.querySelectorAll('.delBtn').forEach(btn => {
         btn.addEventListener('click', async () => {
           if(!confirm('Supprimer cette annonce ?')) return;
