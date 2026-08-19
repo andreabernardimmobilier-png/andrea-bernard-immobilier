@@ -49,6 +49,13 @@
   .existing button:hover{background:#8a1a1a;}
   .token-status{font-size:.8rem;color:var(--muted);margin-top:8px;}
   .token-status.set{color:#1e7e34;}
+  .photo-item{position:relative;width:84px;}
+  .photo-item img{width:84px;height:84px;object-fit:cover;display:block;border:1px solid var(--line);}
+  .photo-item .photo-controls{display:flex;justify-content:space-between;margin-top:3px;}
+  .photo-item button{width:auto;margin:0;padding:2px 5px;font-size:11px;background:var(--navy);}
+  .photo-item .photo-del{background:#a32020;}
+  .photo-item.primary img{border:2px solid var(--gold);}
+  .photo-item .photo-label{position:absolute;top:2px;left:2px;background:var(--gold);color:#fff;font-size:9px;padding:1px 5px;letter-spacing:.04em;text-transform:uppercase;}
 </style>
 </head>
 <body>
@@ -155,8 +162,9 @@
       <textarea id="f_description" placeholder="Texte complet de l'annonce"></textarea>
 
       <label>Photos</label>
+      <div id="photoManager" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px;"></div>
       <input type="file" id="f_photo" accept="image/*" multiple>
-      <div class="hint">Sélectionnez plusieurs photos à la fois (Cmd/Ctrl + clic, ou glisser-déposer). La première sera utilisée comme photo principale.</div>
+      <div class="hint">Chaque photo ajoutée s'ajoute à la liste ci-dessus sans effacer les autres. Utilisez les flèches pour réordonner, la croix pour supprimer. La première photo de la liste est utilisée comme photo principale.</div>
 
       <button type="submit" id="submitBtn">Publier l'annonce</button>
       <button type="button" id="cancelEditBtn" style="display:none;background:none;color:var(--muted);border:1px solid var(--line);margin-top:10px;">Annuler la modification</button>
@@ -289,6 +297,52 @@
     return v;
   }
 
+  let photosState = [];
+
+  function renderPhotoManager(){
+    const el = document.getElementById('photoManager');
+    if(photosState.length === 0){
+      el.innerHTML = '<div class="hint">Aucune photo pour le moment.</div>';
+      return;
+    }
+    el.innerHTML = photosState.map((p, i) => `
+      <div class="photo-item${i===0?' primary':''}">
+        ${i===0 ? '<span class="photo-label">Principale</span>' : ''}
+        <img src="${p.src}">
+        <div class="photo-controls">
+          <button type="button" data-i="${i}" class="photo-up" ${i===0?'disabled':''}>◀</button>
+          <button type="button" data-i="${i}" class="photo-del">✕</button>
+          <button type="button" data-i="${i}" class="photo-down" ${i===photosState.length-1?'disabled':''}>▶</button>
+        </div>
+      </div>
+    `).join('');
+    el.querySelectorAll('.photo-up').forEach(b => b.addEventListener('click', () => {
+      const i = parseInt(b.dataset.i);
+      [photosState[i-1], photosState[i]] = [photosState[i], photosState[i-1]];
+      renderPhotoManager();
+    }));
+    el.querySelectorAll('.photo-down').forEach(b => b.addEventListener('click', () => {
+      const i = parseInt(b.dataset.i);
+      [photosState[i+1], photosState[i]] = [photosState[i], photosState[i+1]];
+      renderPhotoManager();
+    }));
+    el.querySelectorAll('.photo-del').forEach(b => b.addEventListener('click', () => {
+      const i = parseInt(b.dataset.i);
+      photosState.splice(i, 1);
+      renderPhotoManager();
+    }));
+  }
+
+  document.getElementById('f_photo').addEventListener('change', (e) => {
+    const files = Array.from(e.target.files);
+    files.forEach(file => {
+      photosState.push({ type: 'new', src: URL.createObjectURL(file), file });
+    });
+    renderPhotoManager();
+    e.target.value = '';
+  });
+  renderPhotoManager();
+
   document.getElementById('listingForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     if(!getToken()){ alert('Configurez d\'abord votre clé d\'accès en haut de page.'); return; }
@@ -299,12 +353,14 @@
     setStatus(editIndex ? 'Mise à jour en cours...' : 'Publication en cours...', 'pending');
 
     try {
-      const photoFiles = Array.from(document.getElementById('f_photo').files);
       let photoPaths = [];
-      if(photoFiles.length){
-        for(let i=0;i<photoFiles.length;i++){
-          setStatus(`Envoi de la photo ${i+1}/${photoFiles.length}...`, 'pending');
-          const path = await uploadImage(photoFiles[i]);
+      for(let i=0;i<photosState.length;i++){
+        const p = photosState[i];
+        if(p.type === 'existing'){
+          photoPaths.push(p.path);
+        } else {
+          setStatus(`Envoi de la photo ${i+1}/${photosState.length}...`, 'pending');
+          const path = await uploadImage(p.file);
           photoPaths.push(path);
         }
       }
@@ -331,15 +387,12 @@
       json.biens = json.biens || [];
 
       async function applyAndSave(){
+        newListing.photo = photoPaths[0] || '';
+        newListing.photos = photoPaths;
         if (editIndex !== '') {
-          const existing = json.biens[parseInt(editIndex)] || {};
-          newListing.photos = photoPaths.length ? photoPaths : (existing.photos || []);
-          newListing.photo = newListing.photos[0] || existing.photo || '';
           json.biens[parseInt(editIndex)] = newListing;
           return putListingsFile(json, sha, `Modification annonce: ${newListing.titre}`);
         } else {
-          newListing.photo = photoPaths[0] || '';
-          newListing.photos = photoPaths;
           json.biens.unshift(newListing);
           return putListingsFile(json, sha, `Ajout annonce: ${newListing.titre}`);
         }
@@ -376,6 +429,8 @@
     document.getElementById('editingNotice').style.display = 'none';
     document.getElementById('cancelEditBtn').style.display = 'none';
     document.getElementById('submitBtn').textContent = "Publier l'annonce";
+    photosState = [];
+    renderPhotoManager();
   }
   document.getElementById('cancelEditBtn').addEventListener('click', resetForm);
 
@@ -396,8 +451,10 @@
     document.getElementById('f_dpe').value = b.dpe || '';
     document.getElementById('f_horsmarche').checked = !!b.hors_marche;
     document.getElementById('f_description').value = b.description || '';
+    photosState = ((b.photos && b.photos.length) ? b.photos : (b.photo ? [b.photo] : [])).map(path => ({ type: 'existing', src: path, path }));
+    renderPhotoManager();
     document.getElementById('editingNotice').style.display = 'block';
-    document.getElementById('editingNotice').textContent = `Modification de : ${b.titre || '(sans titre)'} — laissez le champ photos vide pour garder les photos actuelles, ou sélectionnez-en de nouvelles pour les remplacer.`;
+    document.getElementById('editingNotice').textContent = `Modification de : ${b.titre || '(sans titre)'}`;
     document.getElementById('cancelEditBtn').style.display = 'block';
     document.getElementById('submitBtn').textContent = "Enregistrer les modifications";
     window.scrollTo({top: document.getElementById('listingForm').offsetTop - 20, behavior: 'smooth'});
