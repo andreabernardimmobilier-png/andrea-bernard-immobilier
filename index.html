@@ -285,7 +285,7 @@ body.modal-lock{overflow:hidden;}
     const match = dpe.match(/[A-G]/i);
     if (!match) return dpe;
     const letter = match[0].toUpperCase();
-    return `<span class="dpe-badge dpe-${letter}">${letter}</span>${dpe}`;
+    return `<span class="dpe-badge dpe-${letter}">${letter}</span>DPE ${letter}`;
   }
 
   function renderCards(list) {
@@ -352,7 +352,7 @@ body.modal-lock{overflow:hidden;}
     const details = [
       b.surface, piecesDisplay, b.dpe ? dpeBadge(b.dpe) : '',
       b.chambres ? b.chambres + ' chambres' : '',
-      b.salles_de_bain ? b.salles_de_bain + ' salles de bain' : '',
+      b.salles_de_bain ? b.salles_de_bain + ' salles de bains' : '',
       b.surface_parcelle ? 'Terrain ' + b.surface_parcelle : '',
       b.chauffage ? 'Chauffage : ' + b.chauffage : ''
     ].filter(Boolean);
