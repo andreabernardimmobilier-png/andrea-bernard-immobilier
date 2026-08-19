@@ -85,6 +85,8 @@ section{padding:64px 24px;}
 .card:hover .thumb img{transform:scale(1.08);}
 .card .body{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column;}
 .card .tag{font-family:-apple-system,Arial,sans-serif;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.card .statut-badge{display:inline-block;font-family:-apple-system,Arial,sans-serif;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border:1px solid var(--gold);color:var(--gold);margin-left:8px;vertical-align:1px;}
+.card .statut-badge.closed{border-color:var(--muted);color:var(--muted);}
 .card .title{font-size:1.15rem;font-weight:400;color:var(--navy);margin-bottom:8px;}
 .card .loc{font-family:-apple-system,Arial,sans-serif;font-size:.82rem;color:var(--muted);margin-bottom:14px;}
 .card .desc{margin-top:4px;font-size:13px;color:var(--ink-soft);line-height:1.6;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;font-family:-apple-system,Arial,sans-serif;}
@@ -117,28 +119,36 @@ section{padding:64px 24px;}
 .contact-row a{color:var(--gold-light);}
 footer{background:#0a1626;color:#6b7386;padding:26px 24px;text-align:center;font-family:-apple-system,Arial,sans-serif;font-size:.78rem;}
 
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+.dpe-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;font-family:-apple-system,Arial,sans-serif;font-size:11px;font-weight:700;color:#fff;margin-right:5px;vertical-align:-4px;}
+.dpe-A{background:#00874C;}
+.dpe-B{background:#3FA13F;}
+.dpe-C{background:#8FC93A;}
+.dpe-D{background:#FFF000;color:#1a1a1a;}
+.dpe-E{background:#F7A600;}
+.dpe-F{background:#EC6C2E;}
+.dpe-G{background:#E2001A;}
 .reveal.in{opacity:1;transform:translateY(0);}
 
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(11,31,58,0.75);z-index:200;padding:40px 20px;overflow-y:auto;opacity:0;transition:opacity .3s ease;}
-.modal-overlay.open{display:flex;align-items:flex-start;justify-content:center;opacity:1;}
-.modal{background:var(--paper);max-width:760px;width:100%;margin-top:30px;transform:scale(.96) translateY(10px);opacity:0;transition:transform .35s ease, opacity .35s ease;}
-.modal-overlay.open .modal{transform:scale(1) translateY(0);opacity:1;}
-.modal .modal-photo{height:360px;position:relative;background:#dcd6c8;}
+.modal-overlay{display:none;position:fixed;inset:0;background:var(--paper);z-index:200;overflow-y:auto;opacity:0;transition:opacity .3s ease;}
+.modal-overlay.open{display:block;opacity:1;}
+.modal{background:var(--paper);max-width:900px;width:100%;margin:0 auto;transform:none;opacity:1;transition:none;}
+.modal .modal-photo{height:min(60vh,520px);position:relative;background:#dcd6c8;}
 .modal .modal-photo img{width:100%;height:100%;object-fit:cover;display:block;}
 .modal .modal-thumbs{display:flex;gap:6px;padding:10px 12px;background:#f3f0ea;overflow-x:auto;}
 .modal .modal-thumb{width:60px;height:60px;object-fit:cover;flex-shrink:0;cursor:pointer;opacity:.55;transition:opacity .2s;border:2px solid transparent;}
 .modal .modal-thumb.active{opacity:1;border-color:var(--gold);}
 .modal .modal-thumb:hover{opacity:1;}
-.modal .modal-close{position:absolute;top:18px;right:18px;background:var(--navy);color:#fff;width:38px;height:38px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;border:none;}
+.modal .modal-close{position:fixed;top:18px;right:18px;background:var(--navy);color:#fff;width:42px;height:42px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;border:none;z-index:2;}
 .modal .modal-tag{position:absolute;top:18px;left:18px;background:var(--navy);color:var(--gold-light);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding:6px 12px;font-family:-apple-system,Arial,sans-serif;}
-.modal .modal-body{padding:40px;}
-.modal .modal-price{font-family:-apple-system,Arial,sans-serif;font-size:28px;color:var(--navy);font-weight:600;}
+.modal .modal-statut{position:absolute;top:18px;right:70px;background:#fff;color:var(--navy);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding:6px 12px;font-family:-apple-system,Arial,sans-serif;border:1px solid var(--gold);}
+.modal .modal-body{padding:32px 24px 80px;max-width:720px;margin:0 auto;}
+.modal .modal-price{font-family:-apple-system,Arial,sans-serif;font-size:32px;color:var(--navy);font-weight:600;}
 .modal .modal-loc{font-family:-apple-system,Arial,sans-serif;font-size:12px;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase;margin-top:8px;}
-.modal .modal-title{margin-top:16px;font-size:20px;font-weight:400;color:var(--navy);}
-.modal .modal-meta{display:flex;gap:20px;font-family:-apple-system,Arial,sans-serif;font-size:12.5px;color:var(--ink-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;margin-top:20px;}
-.modal .modal-desc{margin-top:24px;font-family:-apple-system,Arial,sans-serif;font-size:14.5px;color:var(--ink-soft);line-height:1.8;white-space:pre-line;}
+.modal .modal-title{margin-top:16px;font-size:24px;font-weight:400;color:var(--navy);}
+.modal .modal-meta{display:flex;flex-wrap:wrap;gap:20px;font-family:-apple-system,Arial,sans-serif;font-size:13px;color:var(--ink-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;margin-top:24px;}
+.modal .modal-desc{margin-top:28px;font-family:-apple-system,Arial,sans-serif;font-size:15.5px;color:var(--ink);line-height:1.9;white-space:pre-line;}
 body.modal-lock{overflow:hidden;}
+@media(max-width:720px){.modal .modal-photo{height:46vh;}.modal .modal-body{padding:28px 20px 80px;}.modal .modal-price{font-size:26px;}.modal .modal-title{font-size:20px;}}
 </style>
 </head>
 <body>
@@ -270,6 +280,14 @@ body.modal-lock{overflow:hidden;}
   const overlay = document.getElementById('modalOverlay');
   let allBiens = [];
 
+  function dpeBadge(dpe) {
+    if (!dpe) return dpe;
+    const match = dpe.match(/[A-G]/i);
+    if (!match) return dpe;
+    const letter = match[0].toUpperCase();
+    return `<span class="dpe-badge dpe-${letter}">${letter}</span>${dpe}`;
+  }
+
   function renderCards(list) {
     grid.innerHTML = list.map((b, i) => `
       <div class="card" data-type="${b.type}" data-index="${i}" style="animation-delay:${i * 80}ms;cursor:pointer;">
@@ -277,11 +295,11 @@ body.modal-lock{overflow:hidden;}
           <img src="${b.photo}" alt="${b.titre}">
         </div>
         <div class="body">
-          <div class="tag">${b.hors_marche ? 'Hors marché' : (b.type === 'vente' ? 'Vente' : 'Location')}</div>
+          <div class="tag">${b.hors_marche ? 'Hors marché' : (b.type === 'vente' ? 'Vente' : 'Location')}${b.statut ? `<span class="statut-badge${['Vendu','Loué'].includes(b.statut) ? ' closed' : ''}">${b.statut}</span>` : ''}</div>
           <div class="price">${b.prix}</div>
           <div class="loc">${b.localisation}</div>
           <div class="title">${b.titre}</div>
-          <div class="meta"><span>${b.surface}</span><span>${b.pieces}</span><span>${b.dpe}</span></div>
+          <div class="meta">${[b.surface, b.pieces, b.dpe ? dpeBadge(b.dpe) : ''].filter(Boolean).map(m => `<span>${m}</span>`).join('')}</div>
           ${b.description ? `<div class="desc">${b.description}</div>` : ''}
           <button class="more" data-index="${i}">En savoir plus</button>
         </div>
@@ -330,8 +348,9 @@ body.modal-lock{overflow:hidden;}
 
   function openModal(b) {
     const photos = (b.photos && b.photos.length) ? b.photos : [b.photo];
+    const piecesDisplay = (b.pieces && b.chambres && b.pieces.trim() === (b.chambres + ' chambres')) ? '' : b.pieces;
     const details = [
-      b.surface, b.pieces, b.dpe,
+      b.surface, piecesDisplay, b.dpe ? dpeBadge(b.dpe) : '',
       b.chambres ? b.chambres + ' chambres' : '',
       b.salles_de_bain ? b.salles_de_bain + ' salles de bain' : '',
       b.surface_parcelle ? 'Terrain ' + b.surface_parcelle : '',
@@ -341,6 +360,7 @@ body.modal-lock{overflow:hidden;}
       <div class="modal">
         <div class="modal-photo">
           <span class="modal-tag">${b.hors_marche ? 'Hors marché' : (b.type === 'vente' ? 'Vente' : 'Location')}</span>
+          ${b.statut ? `<span class="modal-statut">${b.statut}</span>` : ''}
           <button class="modal-close" aria-label="Fermer">&times;</button>
           <img src="${photos[0]}" alt="${b.titre}" id="modalMainImg">
         </div>
@@ -359,6 +379,9 @@ body.modal-lock{overflow:hidden;}
     `;
     overlay.classList.add('open');
     document.body.classList.add('modal-lock');
+    window.scrollTo(0,0);
+    const slug = (b.titre || 'bien').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+    history.pushState({modal:true}, '', '#' + slug);
     overlay.querySelector('.modal-close').addEventListener('click', closeModal);
     overlay.querySelectorAll('.modal-thumb').forEach(thumb => {
       thumb.addEventListener('click', () => {
@@ -373,7 +396,11 @@ body.modal-lock{overflow:hidden;}
     overlay.classList.remove('open');
     document.body.classList.remove('modal-lock');
     overlay.innerHTML = '';
+    if (location.hash) history.pushState({modal:false}, '', location.pathname);
   }
+  window.addEventListener('popstate', () => {
+    if (overlay.classList.contains('open')) closeModal();
+  });
 
   overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
