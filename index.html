@@ -119,7 +119,8 @@ section{padding:64px 24px;}
 .contact-row a{color:var(--gold-light);}
 footer{background:#0a1626;color:#6b7386;padding:26px 24px;text-align:center;font-family:-apple-system,Arial,sans-serif;font-size:.78rem;}
 
-.dpe-badge{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;font-family:-apple-system,Arial,sans-serif;font-size:11px;font-weight:700;color:#fff;margin-right:5px;vertical-align:-4px;}
+.dpe-label{font-family:-apple-system,Arial,sans-serif;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:6px;}
+.dpe-badge{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;font-family:-apple-system,Arial,sans-serif;font-size:12px;font-weight:700;color:#fff;vertical-align:-6px;box-shadow:0 1px 2px rgba(0,0,0,0.15);}
 .dpe-A{background:#00874C;}
 .dpe-B{background:#3FA13F;}
 .dpe-C{background:#8FC93A;}
@@ -285,7 +286,7 @@ body.modal-lock{overflow:hidden;}
     const match = dpe.match(/[A-G]/i);
     if (!match) return dpe;
     const letter = match[0].toUpperCase();
-    return `<span class="dpe-badge dpe-${letter}">${letter}</span>DPE ${letter}`;
+    return `<span class="dpe-label">DPE</span><span class="dpe-badge dpe-${letter}">${letter}</span>`;
   }
 
   function renderCards(list) {
