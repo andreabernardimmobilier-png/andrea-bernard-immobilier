@@ -3,18 +3,17 @@
     {
       "titre": "Villa contemporaine - 216 m2",
       "type": "location",
+      "statut": "",
       "prix": "1650",
       "localisation": "Issoire · 63500",
-      "surface": "216",
+      "surface": "216 m²",
       "surface_parcelle": "",
       "chambres": "4",
       "salles_de_bain": "2",
       "chauffage": "Pompe à chaleur",
-      "pieces": "4 chambres",
       "dpe": "A",
       "hors_marche": false,
       "description": "Maison contemporaine de standing – 216 m² – Vue panoramique sur les hauteurs d’Issoire",
-      "photo": "images/1787119231563-IMG_4903.jpeg",
       "photos": [
         "images/1787119231563-IMG_4903.jpeg",
         "images/1787119234451-IMG_4901.jpeg",
@@ -26,7 +25,8 @@
         "images/1787119251771-IMG_8577.jpeg",
         "images/1787119254366-IMG_4909.jpeg",
         "images/1787119258050-IMG_4910.jpeg"
-      ]
+      ],
+      "photo": "images/1787119231563-IMG_4903.jpeg"
     },
     {
       "titre": "Appartement F4 avec terrasse, vue dégagée",
