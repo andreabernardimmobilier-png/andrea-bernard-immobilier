@@ -1,6 +1,25 @@
 {
   "biens": [
     {
+      "titre": "Maison individuelle 144 m2 - Double Garage - Piscine",
+      "type": "vente",
+      "statut": "Sous offre",
+      "prix": "369 990 €",
+      "localisation": "PERIGNAT-SUR-ALLIER · 63800",
+      "surface": "144 m²",
+      "surface_parcelle": "1082 m²",
+      "chambres": "5",
+      "salles_de_bain": "2",
+      "chauffage": "Chauffage gaz",
+      "dpe": "C",
+      "hors_marche": false,
+      "description": "Élégante maison familiale de 144 m² avec piscine chauffée et grand terrain à Pérignat-sur-Allier (63800)\n\nSituée au cœur d’un secteur calme et particulièrement recherché à Pérignat-sur-Allier (63800), cette élégante maison familiale de 144 m² habitables séduit par la fluidité de ses espaces et la qualité de ses prestations.\n\nLa pièce de vie lumineuse et chaleureuse s’ouvre largement sur un superbe terrain arboré de 1 082 m², véritable havre de paix sans vis-à-vis. Les extérieurs accueillent une belle piscine chauffée de 9 × 4,5 mètres, idéale pour prolonger les moments de détente dès les premiers beaux jours.\n\nParfaitement pensée pour accueillir une grande famille ou recevoir des invités, la maison dispose de cinq chambres confortables, de deux salles d’eau contemporaines et de deux toilettes indépendants. Un vaste double garage sécurisé vient parfaire cet ensemble rare, offrant un stationnement aisé ainsi qu’un précieux espace de stockage.\n\nUne opportunité unique alliant sérénité, confort moderne et cadre de vie privilégié aux portes de la métropole.",
+      "photo": "images/1787134495379-IMG_4124.jpeg",
+      "photos": [
+        "images/1787134495379-IMG_4124.jpeg"
+      ]
+    },
+    {
       "titre": "Villa contemporaine - 216 m2",
       "type": "location",
       "statut": "Loué",
