@@ -1,6 +1,30 @@
 {
   "biens": [
     {
+      "titre": "Immeuble de rapport - 209 m2 - 2 Lots",
+      "type": "vente",
+      "statut": "Exclusivité",
+      "prix": "239 990 €",
+      "localisation": "LES MARTRES-DE-VEYRE · 63730",
+      "surface": "209 m²",
+      "surface_parcelle": "232 m²",
+      "chambres": "2",
+      "salles_de_bain": "",
+      "chauffage": "",
+      "dpe": "E",
+      "hors_marche": false,
+      "description": "Immeuble mixte de rapport au cœur des Martres-de-Veyre (63730) – Local commercial et duplex avec terrasse\n\nIdéalement situé en plein centre des Martres-de-Veyre, cet immeuble de rapport de caractère bénéficie d’un emplacement de premier ordre, à proximité immédiate de toutes les commodités et des flux commerçants de la commune.\n\nL’ensemble immobilier se compose de deux lots parfaitement distincts et loués. En rez-de-chaussée, vous trouverez un local commercial de 84,44 m² actuellement exploité en boucherie, bénéficiant d’une excellente visibilité et complété par trois caves en sous-sol. Aux étages, un vaste appartement de type F3 en duplex de 125,45 m² habitables offre de remarquables prestations, comprenant au premier niveau une grande pièce de vie lumineuse, une cuisine équipée haut de gamme signée Atelier Bourgne et une vaste terrasse à l’arrière, puis à l’étage supérieur deux belles chambres, une salle d’eau moderne et un cellier.\n\nCe bien dispose d'annexes rares et très recherchées, notamment une agréable parcelle de terrain clôturée ainsi qu’un grand garage sécurisé. Le bâtiment offre une excellente sérénité patrimoniale grâce à une toiture entièrement neuve et un système de chauffage au gaz de ville.\n\nSur le plan locatif, l'immeuble assure une rentabilité pérenne et immédiate avec le local commercial loué 1 000 € HT par mois et l'appartement loué 730,84 € hors charges (plus 30 € de provisions sur charges par mois), pour une taxe foncière annuelle de 2 502 €.\n\nUn investissement de qualité alliant rendement commercial et résidentiel au sein d'un secteur dynamique et prisé.",
+      "photo": "images/1787224554551-IMG_9189.jpeg",
+      "photos": [
+        "images/1787224554551-IMG_9189.jpeg",
+        "images/1787224557421-IMG_9193.jpeg",
+        "images/1787224560362-IMG_9411.jpeg",
+        "images/1787224563650-IMG_9415.jpeg",
+        "images/1787224566573-IMG_9413.jpeg",
+        "images/1787224569893-IMG_9397.jpeg"
+      ]
+    },
+    {
       "titre": "Immeuble de rapport - 411 m2 - 8 appartements",
       "type": "vente",
       "statut": "Sous offre",
