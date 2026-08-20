@@ -1,6 +1,34 @@
 {
   "biens": [
     {
+      "titre": "Appartement de standing - F4 - 162 m2 - Le Grand Carre de Jaude",
+      "type": "vente",
+      "statut": "Exclusivité",
+      "prix": "720 000 €",
+      "localisation": "Clermont-Ferrand · 63000",
+      "surface": "162 m²",
+      "surface_parcelle": "",
+      "chambres": "3",
+      "salles_de_bain": "2",
+      "chauffage": "Chauffage gaz",
+      "dpe": "C",
+      "hors_marche": false,
+      "description": "Appartement de standing de 162 m² avec balcons et deux garage au Grand Carré de Jaude – Clermont-Ferrand (63000)\n\nIdéalement niché au sein de la prestigieuse résidence du Grand Carré de Jaude, en plein cœur de Clermont-Ferrand, ce somptueux appartement de 162 m² habitables incarne l'alliance parfaite entre le raffinement contemporain et le confort citadin absolu.\n\nDès l'entrée, les volumes généreux et la lumière naturelle mettent en valeur une pièce de réception majestueuse aux finitions haut de gamme, pensée dans les moindres détails avec des matériaux nobles et une élégance intemporelle. Cet espace de vie s'ouvre harmonieusement sur deux superbes balcons, parfaits pour apprécier un extérieur privatif au calme tout en profitant du dynamisme du centre-ville.\n\nLa partie nuit propose trois belles chambres spacieuses et feutrées, complétées par deux salles d’eau contemporaines au design soigné, garantissant une intimité et un bien-être incomparables. Véritable rareté et privilège au cœur de la métropole, deux garages sécurisés viennent parfaire ce bien d'exception.\n\nUne adresse emblématique et une opportunité rare sur le marché clermontois pour les amateurs d'excellence et de grand standing.",
+      "photo": "images/1787222847028-IMG_4430.jpeg",
+      "photos": [
+        "images/1787222847028-IMG_4430.jpeg",
+        "images/1787222849305-IMG_4432.jpeg",
+        "images/1787222851984-IMG_4436.jpeg",
+        "images/1787222855339-IMG_4439.jpeg",
+        "images/1787222859088-IMG_4440.jpeg",
+        "images/1787222862485-IMG_4448.jpeg",
+        "images/1787222867029-IMG_4444.jpeg",
+        "images/1787222869934-IMG_4445.jpeg",
+        "images/1787222873125-IMG_4446.jpeg",
+        "images/1787222876738-IMG_4447.jpeg"
+      ]
+    },
+    {
       "titre": "Maison individuelle 144 m2 - Double Garage - Piscine",
       "type": "vente",
       "statut": "Sous offre",
