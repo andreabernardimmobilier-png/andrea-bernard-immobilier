@@ -297,52 +297,6 @@
     return v;
   }
 
-  let photosState = [];
-
-  function renderPhotoManager(){
-    const el = document.getElementById('photoManager');
-    if(photosState.length === 0){
-      el.innerHTML = '<div class="hint">Aucune photo pour le moment.</div>';
-      return;
-    }
-    el.innerHTML = photosState.map((p, i) => `
-      <div class="photo-item${i===0?' primary':''}">
-        ${i===0 ? '<span class="photo-label">Principale</span>' : ''}
-        <img src="${p.src}">
-        <div class="photo-controls">
-          <button type="button" data-i="${i}" class="photo-up" ${i===0?'disabled':''}>◀</button>
-          <button type="button" data-i="${i}" class="photo-del">✕</button>
-          <button type="button" data-i="${i}" class="photo-down" ${i===photosState.length-1?'disabled':''}>▶</button>
-        </div>
-      </div>
-    `).join('');
-    el.querySelectorAll('.photo-up').forEach(b => b.addEventListener('click', () => {
-      const i = parseInt(b.dataset.i);
-      [photosState[i-1], photosState[i]] = [photosState[i], photosState[i-1]];
-      renderPhotoManager();
-    }));
-    el.querySelectorAll('.photo-down').forEach(b => b.addEventListener('click', () => {
-      const i = parseInt(b.dataset.i);
-      [photosState[i+1], photosState[i]] = [photosState[i], photosState[i+1]];
-      renderPhotoManager();
-    }));
-    el.querySelectorAll('.photo-del').forEach(b => b.addEventListener('click', () => {
-      const i = parseInt(b.dataset.i);
-      photosState.splice(i, 1);
-      renderPhotoManager();
-    }));
-  }
-
-  document.getElementById('f_photo').addEventListener('change', (e) => {
-    const files = Array.from(e.target.files);
-    files.forEach(file => {
-      photosState.push({ type: 'new', src: URL.createObjectURL(file), file });
-    });
-    renderPhotoManager();
-    e.target.value = '';
-  });
-  renderPhotoManager();
-
   document.getElementById('listingForm').addEventListener('submit', async (e) => {
     e.preventDefault();
     if(!getToken()){ alert('Configurez d\'abord votre clé d\'accès en haut de page.'); return; }
@@ -460,7 +414,67 @@
     window.scrollTo({top: document.getElementById('listingForm').offsetTop - 20, behavior: 'smooth'});
   }
 
-  let currentBiens = [];
+  const villeInput = document.getElementById('f_ville');
+  const cpInput = document.getElementById('f_cp');
+  villeInput.addEventListener('blur', async () => {
+    const v = villeInput.value.trim();
+    if(!v) return;
+    villeInput.value = v.toUpperCase();
+    if(cpInput.value.trim()) return;
+    try {
+      const res = await fetch(`https://geo.api.gouv.fr/communes?nom=${encodeURIComponent(v)}&fields=nom,codesPostaux&boost=population&limit=1`);
+      const data = await res.json();
+      if(data && data[0] && data[0].codesPostaux && data[0].codesPostaux[0]){
+        cpInput.value = data[0].codesPostaux[0];
+      }
+    } catch(err){ /* silencieux : pas d'internet ou service indisponible, on n'empêche pas la saisie */ }
+  });
+
+  let photosState = [];
+
+  function renderPhotoManager(){
+    const el = document.getElementById('photoManager');
+    if(photosState.length === 0){
+      el.innerHTML = '<div class="hint">Aucune photo pour le moment.</div>';
+      return;
+    }
+    el.innerHTML = photosState.map((p, i) => `
+      <div class="photo-item${i===0?' primary':''}">
+        ${i===0 ? '<span class="photo-label">Principale</span>' : ''}
+        <img src="${p.src}">
+        <div class="photo-controls">
+          <button type="button" data-i="${i}" class="photo-up" ${i===0?'disabled':''}>◀</button>
+          <button type="button" data-i="${i}" class="photo-del">✕</button>
+          <button type="button" data-i="${i}" class="photo-down" ${i===photosState.length-1?'disabled':''}>▶</button>
+        </div>
+      </div>
+    `).join('');
+    el.querySelectorAll('.photo-up').forEach(b => b.addEventListener('click', () => {
+      const i = parseInt(b.dataset.i);
+      [photosState[i-1], photosState[i]] = [photosState[i], photosState[i-1]];
+      renderPhotoManager();
+    }));
+    el.querySelectorAll('.photo-down').forEach(b => b.addEventListener('click', () => {
+      const i = parseInt(b.dataset.i);
+      [photosState[i+1], photosState[i]] = [photosState[i], photosState[i+1]];
+      renderPhotoManager();
+    }));
+    el.querySelectorAll('.photo-del').forEach(b => b.addEventListener('click', () => {
+      const i = parseInt(b.dataset.i);
+      photosState.splice(i, 1);
+      renderPhotoManager();
+    }));
+  }
+
+  document.getElementById('f_photo').addEventListener('change', (e) => {
+    const files = Array.from(e.target.files);
+    files.forEach(file => {
+      photosState.push({ type: 'new', src: URL.createObjectURL(file), file });
+    });
+    renderPhotoManager();
+    e.target.value = '';
+  });
+  renderPhotoManager();
   async function loadExisting(){
     const listEl = document.getElementById('existingList');
     if(!getToken()){
