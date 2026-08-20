@@ -1,6 +1,29 @@
 {
   "biens": [
     {
+      "titre": "Immeuble de rapport - 411 m2 - 8 appartements",
+      "type": "vente",
+      "statut": "Sous offre",
+      "prix": "569 990 €",
+      "localisation": "ISSOIRE · 63500",
+      "surface": "411 m²",
+      "surface_parcelle": "256 m²",
+      "chambres": "9",
+      "salles_de_bain": "8",
+      "chauffage": "Électrique",
+      "dpe": "D",
+      "hors_marche": false,
+      "description": "Opportunité d’investissement – Immeuble de rapport de 8 lots loués au cœur d’Issoire (63500)\n\nIdéalement situé dans l’hypercentre recherché d’Issoire, rue du Palais, à deux pas immédiats des commerces, des transports et de toutes les commodités, cet immeuble de rapport de caractère constitue une opportunité patrimoniale rare et sécurisée.\n\nL'ensemble immobilier, intégralement loué à 100 %, se compose de huit logements répartis sur quatre niveaux : deux appartements de type F2 de 43,24 m² et 53,37 m² en rez-de-chaussée, deux appartements de type F2 de 60,62 m² et 52,21 m² au premier étage, un appartement de type F3 de 74,33 m² et un studio de 22,15 m² au deuxième étage, ainsi qu'un appartement de type F3 de 54,07 m² et un appartement de type F2 de 51,14 m² au troisième et dernier étage.\n\nLe bien bénéficie d’atouts supplémentaires majeurs, notamment une agréable cour intérieure privative très appréciable en centre-ville, ainsi que plusieurs dépendances et caves offrant de précieux espaces de stockage et un beau potentiel d'évolution.\n\nSur le plan financier, l'immeuble génère un revenu locatif actuel de 3 583 € hors charges par mois, soit 43 000 € par an, et 3 798 € charges comprises par mois, avec un niveau de loyers particulièrement modéré offrant une marge d'optimisation et d'augmentation de rentabilité très intéressante à moyen terme.\n\nUn investissement de premier ordre combinant emplacement stratégique n°1, forte demande locative constante et rendement pérenne, proposé au prix de 569 990 €.",
+      "photo": "images/1787223998106-IMG_5926.jpeg",
+      "photos": [
+        "images/1787223998106-IMG_5926.jpeg",
+        "images/1787224000887-IMG_4797.jpeg",
+        "images/1787224003368-IMG_4799.jpeg",
+        "images/1787224006962-IMG_3327.jpeg",
+        "images/1787224010171-IMG_4016.jpeg"
+      ]
+    },
+    {
       "titre": "Appartement de standing - F4 - 162 m2 - Le Grand Carre de Jaude",
       "type": "vente",
       "statut": "Exclusivité",
