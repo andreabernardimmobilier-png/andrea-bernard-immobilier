@@ -1,6 +1,36 @@
 {
   "biens": [
     {
+      "titre": "Maison individuelle de plain-pied - 158 m2",
+      "type": "vente",
+      "statut": "Exclusivité",
+      "prix": "315 000 €",
+      "localisation": "SAINTE-FLORINE · 43250",
+      "surface": "158 m²",
+      "surface_parcelle": "2226 m²",
+      "chambres": "3",
+      "salles_de_bain": "1",
+      "chauffage": "Gaz",
+      "dpe": "C",
+      "hors_marche": false,
+      "description": "Charmante maison individuelle de plain-pied sur vaste parcelle arborée à Sainte-Florine (43250)\n\nSituée dans un cadre paisible à Sainte-Florine, cette belle villa individuelle de plain-pied déploie 158,5 m² habitables pensés pour offrir un confort de vie optimal au quotidien.\nDès l'entrée, vous découvrirez des espaces de vie lumineux et généreux, incluant une cuisine entièrement équipée ainsi qu'une buanderie attenante très fonctionnelle. L'espace nuit accueille trois grandes chambres confortables, une salle de bains complète et deux toilettes indépendants.\n\nÉrigée sur une superbe parcelle totale de 2 226 m², la propriété séduit par ses extérieurs soignés et sans vis-à-vis. De nombreuses dépendances viennent compléter l'ensemble, comprenant un double garage sécurisé, des espaces de stockage et une cave.\nBénéficiant d'une excellente performance énergétique classée en DPE C, ce bien rare allie sérénité, praticité et générosité des volumes, proposé au prix de 315 000 €.",
+      "photo": "images/1787234821417-IMG_5345.jpeg",
+      "photos": [
+        "images/1787234821417-IMG_5345.jpeg",
+        "images/1787234832007-IMG_5355.jpeg",
+        "images/1787234853185-IMG_5342.jpeg",
+        "images/1787234860514-IMG_5347.jpeg",
+        "images/1787234869806-IMG_5330.jpeg",
+        "images/1787234882208-IMG_5338.jpeg",
+        "images/1787234890463-IMG_5339.jpeg",
+        "images/1787234907641-IMG_5340.jpeg",
+        "images/1787234913668-IMG_5337.jpeg",
+        "images/1787234920745-IMG_5332.jpeg",
+        "images/1787234946190-IMG_5333.jpeg",
+        "images/1787234954618-IMG_5334.jpeg"
+      ]
+    },
+    {
       "titre": "Immeuble de rapport - 209 m2 - 2 Lots",
       "type": "vente",
       "statut": "Exclusivité",
