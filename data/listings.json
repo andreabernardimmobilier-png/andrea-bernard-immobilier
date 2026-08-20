@@ -1,6 +1,33 @@
 {
   "biens": [
     {
+      "titre": "Villa contemporaine - 112 m2",
+      "type": "vente",
+      "statut": "Vendu",
+      "prix": "335 000 €",
+      "localisation": "BEAUMONT · 63110",
+      "surface": "112 m²",
+      "surface_parcelle": "355 m²",
+      "chambres": "3",
+      "salles_de_bain": "1",
+      "chauffage": "",
+      "dpe": "À",
+      "hors_marche": false,
+      "description": "Superbe villa contemporaine de 112 m² avec terrasse couverte et garage à Beaumont (63110)\n\nSituée au cœur d’un secteur calme et très prisé de Beaumont, cette villa contemporaine de plain-pied déploie 112 m² habitables pensés avec des lignes épurées et des prestations de qualité.\n\nDès l'entrée, vous découvrirez une pièce de réception lumineuse et chaleureuse, s'ouvrant directement sur les aménagements extérieurs grâce à de larges ouvertures. La partie nuit se compose de trois belles chambres confortables ainsi que d’une salle d’eau moderne et élégante.\nÉdifiée sur une parcelle optimisée et soigneusement aménagée de 355 m², la propriété séduit par sa superbe cour pavée et sa terrasse couverte façon patio, véritable prolongement de l'espace de vie pour vos réceptions en extérieur. Un garage fermé sécurisé vient compléter l’ensemble pour un confort de stationnement et de stockage optimal au quotidien.\nUn bien rare à la vente aux portes de Clermont-Ferrand, combinant modernité, fonctionnalité et sérénité, proposé au prix de 365 000 € FAI.",
+      "photo": "images/1787256754660-IMG_8097.jpeg",
+      "photos": [
+        "images/1787256754660-IMG_8097.jpeg",
+        "images/1787256758361-IMG_0956.jpeg",
+        "images/1787256763443-IMG_1016.jpeg",
+        "images/1787256767480-IMG_8968.jpeg",
+        "images/1787256770613-IMG_8965.jpeg",
+        "images/1787256773488-IMG_8977.jpeg",
+        "images/1787256776530-IMG_8984.jpeg",
+        "images/1787256779316-IMG_8985.jpeg",
+        "images/1787256782129-IMG_8970.jpeg"
+      ]
+    },
+    {
       "titre": "Charmante propriété - 305 m2",
       "type": "vente",
       "statut": "Vendu",
