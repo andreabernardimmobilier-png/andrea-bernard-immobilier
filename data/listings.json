@@ -1,6 +1,28 @@
 {
   "biens": [
     {
+      "titre": "Maison individuelle - 166 m2",
+      "type": "vente",
+      "statut": "Vendu",
+      "prix": "360 000 €",
+      "localisation": "GIGNAT · 63340",
+      "surface": "166 m²",
+      "surface_parcelle": "",
+      "chambres": "",
+      "salles_de_bain": "",
+      "chauffage": "Gaz",
+      "dpe": "D",
+      "hors_marche": false,
+      "description": "Charmante maison individuelle de 166 m² avec piscine et double garage à Gignat (63340)\n\nImplantée dans un environnement calme et verdoyant sur la commune prisée de Gignat, cette superbe propriété individuelle de 166 m² habitables séduit par ses volumes généreux, son intimité et son cadre de vie d'exception.\nL’intérieur offre de vastes espaces de vie chaleureux et baignés de lumière, conçus pour le bien-être de toute la famille. La partie nuit dispose quant à elle de quatre belles chambres confortables, pensées pour préserver la tranquillité de chacun au quotidien.\n\nÀ l’extérieur, le jardin paysager sans aucun vis-à-vis invite à la détente avec une magnifique piscine sécurisée et de larges terrasses aménagées pour profiter pleinement des beaux jours face à un cadre naturel apaisant. Un grand double garage vient parfaire les prestations de ce bien en assurant un stationnement aisé et de multiples possibilités de rangement.\nUne propriété rare et soignée alliant élégance, sérénité et prestations de qualité aux portes du bassin issoirien.",
+      "photo": "images/1787251287014-IMG_3756.jpeg",
+      "photos": [
+        "images/1787251287014-IMG_3756.jpeg",
+        "images/1787251291803-IMG_3757.jpeg",
+        "images/1787251295665-IMG_3759.jpeg",
+        "images/1787251298999-IMG_3758.jpeg"
+      ]
+    },
+    {
       "titre": "Immeuble de rapport - 7 appartements",
       "type": "vente",
       "statut": "Vendu",
