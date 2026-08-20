@@ -1,6 +1,34 @@
 {
   "biens": [
     {
+      "titre": "Immeuble de rapport - 7 appartements",
+      "type": "vente",
+      "statut": "Vendu",
+      "prix": "499 990 €",
+      "localisation": "ROYAT · 63130",
+      "surface": "",
+      "surface_parcelle": "",
+      "chambres": "",
+      "salles_de_bain": "",
+      "chauffage": "Électrique",
+      "dpe": "D",
+      "hors_marche": false,
+      "description": "Opportunité patrimoniale – Immeuble de rapport de 7 lots loués au cœur de Royat (63130)\n\nIdéalement situé dans un secteur recherché et dynamique de Royat, à proximité immédiate des commerces, des transports et du cadre thermal privilégié, cet immeuble de rapport constitue un investissement locatif pérenne et de premier choix.\n\nL'ensemble immobilier se compose de sept appartements parfaitement agencés, tous actuellement loués, assurant une gestion sereine sans vacance locative ainsi qu’une belle rentabilité immédiate. Deux caves viennent compléter le bâti, offrant de précieux espaces de stockage annexes pour les résidents.\nGrâce à son emplacement stratégique aux portes de Clermont-Ferrand et à la forte attractivité du secteur, ce bien séduit par son équilibre parfait entre sécurité patrimoniale, valorisation à long terme et rendement locatif performant.\nUn produit d'investissement rare sur le marché royatais, idéal pour développer ou consolider un portefeuille immobilier de qualité.",
+      "photo": "images/1787244660512-IMG_5794.jpeg",
+      "photos": [
+        "images/1787244660512-IMG_5794.jpeg",
+        "images/1787244667659-IMG_5557.jpeg",
+        "images/1787244672705-IMG_4569.jpeg",
+        "images/1787244677573-IMG_3236.jpeg",
+        "images/1787244683778-IMG_2054.jpeg",
+        "images/1787244687883-IMG_9825.jpeg",
+        "images/1787244695408-IMG_8802.jpeg",
+        "images/1787244700945-IMG_5099.jpeg",
+        "images/1787244708279-IMG_2044.jpeg",
+        "images/1787244715195-IMG_2043.jpeg"
+      ]
+    },
+    {
       "titre": "Maison individuelle de plain-pied - 158 m2",
       "type": "vente",
       "statut": "Exclusivité",
