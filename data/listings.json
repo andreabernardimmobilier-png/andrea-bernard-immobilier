@@ -1,6 +1,30 @@
 {
   "biens": [
     {
+      "titre": "Charmante propriété - 305 m2",
+      "type": "vente",
+      "statut": "Vendu",
+      "prix": "477 000 €",
+      "localisation": "ISSOIRE · 63500",
+      "surface": "305 m²",
+      "surface_parcelle": "6335 m²",
+      "chambres": "4",
+      "salles_de_bain": "2",
+      "chauffage": "",
+      "dpe": "",
+      "hors_marche": true,
+      "description": "Magnifique propriété de caractère de 305 m² sur parc arboré de 6 335 m² à Issoire (63500)\n\nNiché dans un cadre verdoyant et privilégié à Issoire, ce bien d’exception déploie 305 m² habitables alliant le charme de l'ancien, de superbes volumes et une atmosphère chaleureuse.\n\nDès l'entrée, la demeure séduit par ses espaces de réception généreux et lumineux, agrémentés d'un poêle à bois venant sublimer l'ambiance des pièces de vie, complété par un système de chauffage au fioul. La partie nuit accueille quatre grandes chambres confortables, pensées pour offrir calme et intimité à chaque membre de la famille.\nVéritable écrin de nature en ville, la propriété s'étend sur une remarquable parcelle arborée et paysagée de 6 335 m², garantissant une tranquillité absolue et sans aucun vis-à-vis. Un grand double garage sécurisé vient parfaire cet ensemble rare, offrant un stationnement aisé ainsi que de beaux volumes de stockage et d'atelier.\nUne demeure d'exception sur le secteur issoirien, alliant prestige, sérénité et rareté foncière, proposée au prix de 477 000 €.",
+      "photo": "images/1787256543234-IMG_6383.jpeg",
+      "photos": [
+        "images/1787256543234-IMG_6383.jpeg",
+        "images/1787256548561-IMG_6381.jpeg",
+        "images/1787256552183-IMG_6309.jpeg",
+        "images/1787256555385-IMG_6260.jpeg",
+        "images/1787256559489-IMG_6387.jpeg",
+        "images/1787256566560-IMG_6388.jpeg"
+      ]
+    },
+    {
       "titre": "Maison individuelle - 166 m2",
       "type": "vente",
       "statut": "Vendu",
