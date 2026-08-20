@@ -289,6 +289,11 @@ body.modal-lock{overflow:hidden;}
     return `<span class="dpe-label">DPE</span><span class="dpe-badge dpe-${letter}">${letter}</span>`;
   }
 
+  function sortBiens(list) {
+    const closed = b => ['Vendu', 'Loué'].includes(b.statut) ? 1 : 0;
+    return [...list].sort((a, b) => closed(a) - closed(b));
+  }
+
   function renderCards(list) {
     grid.innerHTML = list.map((b, i) => `
       <div class="card" data-type="${b.type}" data-index="${i}" style="animation-delay:${i * 80}ms;cursor:pointer;">
@@ -316,7 +321,7 @@ body.modal-lock{overflow:hidden;}
     grid.classList.add('fading');
     setTimeout(() => {
       const filtered = filter === 'all' ? allBiens : allBiens.filter(b => b.type === filter);
-      renderCards(filtered);
+      renderCards(sortBiens(filtered));
       grid.classList.remove('fading');
     }, 200);
   }
@@ -325,7 +330,7 @@ body.modal-lock{overflow:hidden;}
     .then(r => r.json())
     .then(data => {
       allBiens = data.biens || [];
-      renderCards(allBiens);
+      renderCards(sortBiens(allBiens));
     })
     .catch(() => {
       grid.innerHTML = '<p style="padding:40px;color:var(--ink-soft);">Impossible de charger les biens pour le moment.</p>';
