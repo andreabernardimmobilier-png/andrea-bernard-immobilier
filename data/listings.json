@@ -1,6 +1,36 @@
 {
   "biens": [
     {
+      "titre": "Villa d’exception - 173 m2",
+      "type": "vente",
+      "statut": "Sous offre",
+      "prix": "345 000 €",
+      "localisation": "BEAULIEU · 63570",
+      "surface": "173 m²",
+      "surface_parcelle": "2374 m²",
+      "chambres": "3",
+      "salles_de_bain": "2",
+      "chauffage": "Pompe à chaleur",
+      "dpe": "A",
+      "hors_marche": false,
+      "description": "Villa d’exception de 170 m² sur une jolie parcelle arborée à Beaulieu (63570)\n\nIdéalement située dans un cadre paisible et privilégié à Beaulieu, cette superbe villa d'exception déploie 170 m² habitables alliant charme architectural, élégance des finitions et confort moderne.\nDès l'entrée, la maison séduit par ses espaces de réception généreux et baignés de lumière, pensés pour offrir une atmosphère chaleureuse au quotidien. L’espace nuit accueille trois belles chambres spacieuses, conçues pour préserver le calme et l'intimité de chacun.\n\nÉrigée sur une magnifique parcelle de 2 374 m², la propriété bénéficie d’extérieurs soignés avec une belle terrasse couverte en ossature bois, idéale pour prolonger les moments de convivialité en plein air. De superbes annexes viennent compléter l'ensemble, comprenant un double garage de 42 m² ainsi qu'un carport, assurant un stationnement aisé et de multiples possibilités de rangement.\nUn bien rare à la vente sur le secteur, combinant sérénité, prestations haut de gamme et générosité des volumes, proposé au prix de 345 000 €.",
+      "photo": "images/1787289527250-IMG_4066.jpeg",
+      "photos": [
+        "images/1787289527250-IMG_4066.jpeg",
+        "images/1787289530434-IMG_4067.jpeg",
+        "images/1787289532833-IMG_4044.jpeg",
+        "images/1787289535032-IMG_4040.jpeg",
+        "images/1787289542751-IMG_4049.jpeg",
+        "images/1787289545459-IMG_4051.jpeg",
+        "images/1787289547914-IMG_4052.jpeg",
+        "images/1787289550037-IMG_4053.jpeg",
+        "images/1787289556845-IMG_4054.jpeg",
+        "images/1787289559391-IMG_4055.jpeg",
+        "images/1787289561708-IMG_4059.jpeg",
+        "images/1787289563714-IMG_4063.jpeg"
+      ]
+    },
+    {
       "titre": "Maison individuelle - 238 m2",
       "type": "vente",
       "statut": "Nouvelle offre",
