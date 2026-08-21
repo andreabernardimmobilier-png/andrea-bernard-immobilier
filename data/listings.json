@@ -1,6 +1,31 @@
 {
   "biens": [
     {
+      "titre": "Maison neuve - 85 m2",
+      "type": "vente",
+      "statut": "Sous compromis",
+      "prix": "280 000 €",
+      "localisation": "CLERMONT FERRAND · 63000",
+      "surface": "85 m²",
+      "surface_parcelle": "",
+      "chambres": "3",
+      "salles_de_bain": "1",
+      "chauffage": "Pompe à chaleur",
+      "dpe": "A",
+      "hors_marche": false,
+      "description": "Maison neuve contemporaine de 85 m² avec jardin et terrasse – Avenue du Limousin à Clermont-Ferrand (63000)\n\nIdéalement située avenue du Limousin à Clermont-Ferrand, à proximité immédiate des commodités, des écoles et des axes de transport, cette maison neuve de 85 m² habitables séduit par ses lignes contemporaines et son confort résolument moderne.\nDès l'entrée, vous découvrirez une pièce de vie lumineuse et conviviale intégrant une cuisine moderne entièrement aménagée et équipée. La partie nuit se compose de trois chambres confortables et bien agencées, complétées par une salle d’eau élégante aux finitions actuelles.\nCôté extérieur, la maison s'ouvre sur une agréable terrasse prolongée par un terrain privatif à l'arrière, offrant un espace vert au calme, idéal pour vos moments de détente en plein air.\nBénéficiant d'une excellente isolation thermique et équipée d'un système de climatisation réversible, cette villa allie performances énergétiques de premier ordre, faibles consommations et confort thermique optimal en toute saison.\nUne belle opportunité sur le marché clermontois, parfaite pour une vie de famille alliant praticité urbaine et sérénité.",
+      "photo": "images/1787290037126-IMG_5052.jpeg",
+      "photos": [
+        "images/1787290037126-IMG_5052.jpeg",
+        "images/1787290040982-IMG_8517.jpeg",
+        "images/1787290043485-IMG_8494.jpeg",
+        "images/1787290120747-IMG_8493.jpeg",
+        "images/1787290123030-IMG_8495.jpeg",
+        "images/1787290125143-IMG_8499.jpeg",
+        "images/1787290127873-IMG_8500.jpeg"
+      ]
+    },
+    {
       "titre": "Villa d’exception - 173 m2",
       "type": "vente",
       "statut": "Sous offre",
