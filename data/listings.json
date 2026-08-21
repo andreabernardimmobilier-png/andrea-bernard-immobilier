@@ -1,6 +1,31 @@
 {
   "biens": [
     {
+      "titre": "Immeuble de rapport - 7 lots",
+      "type": "vente",
+      "statut": "Sous offre",
+      "prix": "389 990 €",
+      "localisation": "VIC LE COMTE · 63270",
+      "surface": "",
+      "surface_parcelle": "",
+      "chambres": "",
+      "salles_de_bain": "",
+      "chauffage": "",
+      "dpe": "D",
+      "hors_marche": false,
+      "description": "Immeuble de rapport mixte – 4 appartements et 3 locaux commerciaux à Vic-le-Comte (63270)\n\nIdéalement situé au cœur d’un secteur commerçant et dynamique de Vic-le-Comte, à deux pas de toutes les commodités, cet ensemble immobilier de rapport constitue une opportunité d’investissement patrimonial particulièrement attractive et polyvalente.\nLe bâtiment se compose d'une partie commerciale en rez-de-chaussée comprenant trois locaux bénéficiant d'une belle visibilité sur rue, idéale pour assurer une activité de proximité pérenne. Aux étages, l'immeuble dispose de quatre appartements fonctionnels et lumineux, offrant une répartition équilibrée et une excellente mixité locative.\nGrâce à son emplacement stratégique dans une commune très recherchée aux portes de l'agglomération clermontoise, ce bien garantit une forte attractivité locative, un potentiel de rendement sécurisé et une belle valorisation dans le temps.\nUn investissement de premier choix pour développer votre portefeuille immobilier, proposé au prix de 389 990 €.",
+      "photo": "images/1787306181780-IMG_4440.jpeg",
+      "photos": [
+        "images/1787306181780-IMG_4440.jpeg",
+        "images/1787306194925-IMG_5297.jpeg",
+        "images/1787306231612-IMG_5292.jpeg",
+        "images/1787306255103-IMG_5293.jpeg",
+        "images/1787306272175-IMG_1003.jpeg",
+        "images/1787306303689-IMG_1010.jpeg",
+        "images/1787306340457-IMG_1008.jpeg"
+      ]
+    },
+    {
       "titre": "Ensemble immobilier de caractère à Solignat - 342 m2",
       "type": "vente",
       "statut": "Vendu",
