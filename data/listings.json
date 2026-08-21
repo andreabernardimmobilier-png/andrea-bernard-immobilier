@@ -1,6 +1,35 @@
 {
   "biens": [
     {
+      "titre": "Maison individuelle - 238 m2",
+      "type": "vente",
+      "statut": "Nouvelle offre",
+      "prix": "365 000 €",
+      "localisation": "VERTAIZON · 63910",
+      "surface": "238 m²",
+      "surface_parcelle": "800 m²",
+      "chambres": "4",
+      "salles_de_bain": "2",
+      "chauffage": "",
+      "dpe": "B",
+      "hors_marche": false,
+      "description": "Superbe maison individuelle de 238 m² sur sous-sol complet à Vertaizon (63910)\n\nSituée dans un environnement calme et agréable à Vertaizon, cette belle propriété individuelle séduit par ses volumes exceptionnels de 238 m² habitables et ses finitions soignées.\n\nDès l'entrée, vous découvrirez des espaces de réception lumineux et contemporains, pensés pour offrir un cadre de vie convivial et confortable au quotidien, chauffés par un système électrique performant. La partie nuit accueille quatre grandes chambres spacieuses, idéales pour accueillir chaleureusement toute la famille.\nÉdifiée sur une belle parcelle de 800 m² agrémentée d'une élégante cour pavée et d'extérieurs soignés, la maison bénéficie également d’un sous-sol complet, offrant un vaste potentiel d'aménagement, de multiples stationnements sécurisés et de précieux espaces de stockage ou d'atelier.\nUne opportunité rare alliant générosité des volumes, sérénité et praticité aux portes de l'agglomération clermontoise, proposée au prix de 365 000 €.",
+      "photo": "images/1787288980266-IMG_4489.jpeg",
+      "photos": [
+        "images/1787288980266-IMG_4489.jpeg",
+        "images/1787288984883-IMG_4493.jpeg",
+        "images/1787288990437-IMG_4470.jpeg",
+        "images/1787288994113-IMG_4472.jpeg",
+        "images/1787288997962-IMG_4474.jpeg",
+        "images/1787289002022-IMG_4477.jpeg",
+        "images/1787289005329-IMG_4481.jpeg",
+        "images/1787289008696-IMG_4479.jpeg",
+        "images/1787289012427-IMG_4480.jpeg",
+        "images/1787289016191-IMG_4486.jpeg",
+        "images/1787289019645-IMG_4487.jpeg"
+      ]
+    },
+    {
       "titre": "Villa contemporaine - 112 m2",
       "type": "vente",
       "statut": "Vendu",
