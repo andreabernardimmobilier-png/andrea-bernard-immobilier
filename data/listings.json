@@ -1,6 +1,31 @@
 {
   "biens": [
     {
+      "titre": "Immeuble 2 lots - Local commercial - Appartement",
+      "type": "vente",
+      "statut": "Vendu",
+      "prix": "150 000 €",
+      "localisation": "LIMOGES · 87000",
+      "surface": "",
+      "surface_parcelle": "",
+      "chambres": "",
+      "salles_de_bain": "",
+      "chauffage": "Gaz",
+      "dpe": "",
+      "hors_marche": false,
+      "description": "Immeuble de caractère – Local commercial et appartement en duplex de 4 chambres à Limoges (87000)\n\nIdéalement situé au cœur de Limoges, à proximité immédiate des commerces, des transports et de toutes les commodités citadines, cet ensemble immobilier de caractère séduit par son cachet préservé et ses beaux volumes.\n\nLe bien se compose d'un local commercial en rez-de-chaussée, idéal pour développer une activité professionnelle de proximité ou assurer un rendement locatif, complété par un vaste appartement en duplex aux étages supérieurs. Traversé par une belle lumière naturelle, ce logement chaleureux dispose de magnifiques parquets d'époque, de cheminées décoratives et d'un espace nuit comprenant quatre grandes chambres confortables, le tout chauffé au gaz de ville.\nGrâce à son agencement polyvalent et à son emplacement recherché en centre-ville, cette propriété offre de multiples perspectives, convenant aussi bien à un investisseur en quête de rentabilité mixte qu'à un particulier souhaitant combiner habitation spacieuse et projet professionnel.\nUne opportunité rare sur le marché limougeaud, proposée au prix de 150 000 €.",
+      "photo": "images/1787330840408-IMG_6748.jpeg",
+      "photos": [
+        "images/1787330840408-IMG_6748.jpeg",
+        "images/1787330861903-IMG_6662.jpeg",
+        "images/1787330866167-IMG_6664.jpeg",
+        "images/1787330869350-IMG_6666.jpeg",
+        "images/1787330872168-IMG_6669.jpeg",
+        "images/1787330874891-IMG_6683.jpeg",
+        "images/1787330877598-IMG_6659.jpeg"
+      ]
+    },
+    {
       "titre": "Immeuble de rapport - 7 lots",
       "type": "vente",
       "statut": "Sous offre",
