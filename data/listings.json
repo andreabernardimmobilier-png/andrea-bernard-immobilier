@@ -1,6 +1,34 @@
 {
   "biens": [
     {
+      "titre": "Ensemble immobilier de caractère à Solignat - 342 m2",
+      "type": "vente",
+      "statut": "Vendu",
+      "prix": "225 000 €",
+      "localisation": "SOLIGNAT · 63500",
+      "surface": "342 m²",
+      "surface_parcelle": "3395 m²",
+      "chambres": "6",
+      "salles_de_bain": "2",
+      "chauffage": "Gaz",
+      "dpe": "C",
+      "hors_marche": false,
+      "description": "Ensemble immobilier de caractère avec piscine sur grand terrain de 3 395 m² à Solignat (63500)\n\nSitué dans un cadre paisible et verdoyant sur la commune de Solignat, à proximité immédiate d'Issoire, ce bel ensemble immobilier offre un potentiel remarquable et de très beaux volumes.\nLa propriété se compose d’une vaste maison individuelle développant 260 m² habitables, idéale pour accueillir une grande famille ou un projet de vie spacieux, ainsi que d’une authentique maison en pierres apparentes de 82 m² à rénover, parfaite pour créer un gîte, un logement indépendant ou un atelier d'artiste.\nÉrigé sur un superbe terrain arboré de 3 395 m², le domaine bénéficie d’extérieurs généreux au calme absolu, sublimés par une piscine privée pour profiter pleinement des beaux jours en toute sérénité.\nUne opportunité rare alliant le charme de la pierre, un volume habitable exceptionnel et un fort potentiel de valorisation, proposée au prix de 235 000 €.",
+      "photo": "images/1787290374274-IMG_2289.jpeg",
+      "photos": [
+        "images/1787290374274-IMG_2289.jpeg",
+        "images/1787290378901-IMG_9049.jpeg",
+        "images/1787290381807-IMG_3620.jpeg",
+        "images/1787290385008-IMG_2293.jpeg",
+        "images/1787290388586-IMG_2297.jpeg",
+        "images/1787290391718-IMG_2300.jpeg",
+        "images/1787290394258-IMG_2301.jpeg",
+        "images/1787290396663-IMG_2330.jpeg",
+        "images/1787290399844-IMG_2332.jpeg",
+        "images/1787290402754-IMG_2327.jpeg"
+      ]
+    },
+    {
       "titre": "Maison neuve - 85 m2",
       "type": "vente",
       "statut": "Sous compromis",
