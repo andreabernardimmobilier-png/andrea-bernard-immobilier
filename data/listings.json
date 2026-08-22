@@ -1,6 +1,30 @@
 {
   "biens": [
     {
+      "titre": "Bureaux - 256 m2",
+      "type": "vente",
+      "statut": "Vendu",
+      "prix": "335 000 €",
+      "localisation": "ISSOIRE · 63500",
+      "surface": "256 m²",
+      "surface_parcelle": "",
+      "chambres": "",
+      "salles_de_bain": "",
+      "chauffage": "Pompe à chaleur",
+      "dpe": "",
+      "hors_marche": true,
+      "description": "Superbe ensemble de bureaux de 256 m² au cœur d’Issoire (63500)\n\nIdéalement situés en plein hypercentre d’Issoire, à proximité immédiate des commodités, des axes de passage et des transports, ces bureaux professionnels de 256 m² offrent un emplacement stratégique et une adresse de choix pour implanter ou développer votre activité.\nL’espace propose de remarquables volumes modulables et baignés de lumière, parfaitement configurés pour accueillir des bureaux individuels, des salles de réunion, un accueil client de standing ou des espaces de travail collaboratifs. L’agencement actuel garantit une excellente fluidité de circulation et un confort de travail optimal pour vos équipes et vos visiteurs.\nGrâce à sa localisation privilégiée au centre de la vie économique issoirienne et à sa grande surface, ce bien convient parfaitement aux professions libérales, cabinets médicaux, sièges d'entreprise ou investisseurs en quête d'un actif tertiaire de grande qualité.\nUne opportunité rare à la vente sur le secteur tertiaire d’Issoire, alliant visibilité, accessibilité et fort potentiel.",
+      "photo": "images/1787380338561-IMG_7732.jpeg",
+      "photos": [
+        "images/1787380338561-IMG_7732.jpeg",
+        "images/1787380340312-IMG_5149.jpeg",
+        "images/1787380343116-IMG_5153.jpeg",
+        "images/1787380345729-IMG_5154.jpeg",
+        "images/1787380348889-IMG_5161.jpeg",
+        "images/1787380351587-IMG_7726.jpeg"
+      ]
+    },
+    {
       "titre": "Immeuble 2 lots - Local commercial - Appartement",
       "type": "vente",
       "statut": "Vendu",
