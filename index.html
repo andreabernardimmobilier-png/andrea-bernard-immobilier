@@ -289,14 +289,15 @@ body.modal-lock{overflow:hidden;}
     return `<span class="dpe-label">DPE</span><span class="dpe-badge dpe-${letter}">${letter}</span>`;
   }
 
-  function sortBiens(list) {
+ function sortBiens(list) {
     function rank(b) {
-      if (b.statut === 'Vendu' || b.statut === 'Loué') return 3;
-      if (b.statut === 'Sous offre' || b.statut === 'Sous compromis') return 2;
+      if (b.statut === 'Vendu' || b.statut === 'Loué') return 4;
+      if (b.statut === 'Sous compromis') return 3;
+      if (b.statut === 'Sous offre') return 2;
       if (b.statut === 'Exclusivité' || b.type === 'location') return 0;
       return 1;
     }
-    return [...list].sort((a, b) => rank(a) - rank(b));  
+    return [...list].sort((a, b) => rank(a) - rank(b));
   }
 
   function renderCards(list) {
