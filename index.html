@@ -290,8 +290,13 @@ body.modal-lock{overflow:hidden;}
   }
 
   function sortBiens(list) {
-    const closed = b => ['Vendu', 'Loué'].includes(b.statut) ? 1 : 0;
-    return [...list].sort((a, b) => closed(a) - closed(b));
+    function rank(b) {
+      if (b.statut === 'Vendu' || b.statut === 'Loué') return 3;
+      if (b.statut === 'Sous offre' || b.statut === 'Sous compromis') return 2;
+      if (b.statut === 'Exclusivité' || b.type === 'location') return 0;
+      return 1;
+    }
+    return [...list].sort((a, b) => rank(a) - rank(b));  
   }
 
   function renderCards(list) {
