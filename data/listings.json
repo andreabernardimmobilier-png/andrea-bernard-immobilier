@@ -1,6 +1,25 @@
 {
   "biens": [
     {
+      "titre": "Terrain constructible 4900 m2",
+      "type": "vente",
+      "statut": "Sous offre",
+      "prix": "99 000 €",
+      "localisation": "PARDINES · 63500",
+      "surface": "",
+      "surface_parcelle": "4900 m²",
+      "chambres": "",
+      "salles_de_bain": "",
+      "chauffage": "",
+      "dpe": "",
+      "hors_marche": false,
+      "description": "L’Agence Andrea Bernard Immobilier vous présente en exclusivité cette opportunité foncière d'exception située sur les hauteurs très recherchées de Pardines.\nOffrant une surface rare de 4 900 m² entièrement constructibles, cette parcelle unique séduit immédiatement par son cadre naturel privilégié et sa vue panoramique spectaculaire sur les reliefs environnants.\nUn cadre d’exception et une vue imprenable\nSitué sur la commune prisée de Pardines, ce terrain bénéficie d'une position dominante remarquable, vous garantissant un panorama dégagé sans égal ainsi qu'une exposition idéale baignée de lumière tout au long de la journée. Le calme absolu et la beauté des paysages environnants offrent un cadre de vie particulièrement recherché, alliant sérénité et nature.\nUn potentiel de construction exceptionnel\nBénéficiant d'une surface constructible intégrale de 4 900 m², ce bien offre un champ des possibles remarquable. Il permet de concevoir une résidence de grand standing avec piscine, dépendances et vaste parc paysager sans aucune contrainte d'espace, ou d'envisager un projet immobilier d'envergure idéalement valorisé par la configuration du terrain.\nUne situation géographique privilégiée\nÀ seulement quelques minutes d'Issoire, des commodités, des établissements scolaires et de l'accès à l'A75, Pardines conjugue douceur de vivre rurale et proximité immédiate avec les grands axes et bassins d'emploi.\nUn bien d'une rareté absolue sur le marché, réunissant surface constructible hors norme, vue panoramique dominante et adresse recherchée.",
+      "photo": "images/1791397433001-6201637F-5A3B-4E77-89FA-1A34CB088C99.jpeg",
+      "photos": [
+        "images/1791397433001-6201637F-5A3B-4E77-89FA-1A34CB088C99.jpeg"
+      ]
+    },
+    {
       "titre": "Maison de plain-pied - 119 m2",
       "type": "vente",
       "statut": "Exclusivité",
