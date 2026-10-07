@@ -1,6 +1,31 @@
 {
   "biens": [
     {
+      "titre": "Maison de plain-pied - 119 m2",
+      "type": "vente",
+      "statut": "Exclusivité",
+      "prix": "242 000 €",
+      "localisation": "PERIGNAT-LES-SARLIÈVES · 63170",
+      "surface": "119 m²",
+      "surface_parcelle": "559 m²",
+      "chambres": "2",
+      "salles_de_bain": "1",
+      "chauffage": "Poêle a granulés",
+      "dpe": "C",
+      "hors_marche": false,
+      "description": "L’Agence Andrea Bernard Immobilier vous présente en exclusivité cette maison de plain-pied contemporaine située sur la commune prisée de Pérignat-lès-Sarliève.\nDéveloppant une surface habitable de 119 m² sur un terrain clos et aménagé de 559 m², ce bien séduit par ses volumes, sa luminosité et une configuration rare qui s’adaptera parfaitement à tous vos projets de vie, qu’il s’agisse d’accueillir un proche, de télétravailler ou de recevoir en toute convivialité.\nLes extérieurs\nLa grande cour privative offre un vaste espace aménagé en béton clair, sans vis-à-vis direct, permettant de stationner aisément plusieurs véhicules tout en profitant d'espaces de détente au calme.\nLe cadre est soigné avec des jardinières paysagères accueillant un olivier ainsi que des arbres préservant votre intimité. L'architecture aux lignes contemporaines associe façades claires, toitures en tuiles canal décalées et larges baies vitrées tournées vers l'extérieur.\nLes espaces de vie et cuisines\nLa pièce à vivre principale propose un séjour lumineux carrelé de blanc et une cuisine américaine moderne toute équipée avec îlot central et table repas intégrée.\nUne seconde cuisine indépendante particulièrement spacieuse complète l’ensemble avec ses linéaires de rangements, ses équipements encastrés et son grand coin repas dédié.\nL'espace nuit et sanitaires\nLa suite parentale profite d'une double exposition avec baies vitrées coulissantes ouvrant directement sur la cour, ainsi que d'un véritable dressing indépendant aménagé avec penderies et étagères.\nLa seconde chambre offre un beau volume chaleureux avec sol parqueté et belle clarté naturelle.\nLa salle d’eau contemporaine est entièrement faïencée et dotée d’une douche à l’italienne vitrée grand format, d’un meuble vasque suspendu à tiroirs et de miroirs muraux.\nUn bien rare alliant confort du plain-pied complet, modularité unique et emplacement privilégié sur Pérignat-lès-Sarliève.",
+      "photo": "images/1791397299368-E5745BD8-DFF4-4D4D-B830-782515449E27.jpeg",
+      "photos": [
+        "images/1791397299368-E5745BD8-DFF4-4D4D-B830-782515449E27.jpeg",
+        "images/1791397301491-1C73F181-6E46-4AC5-863E-774E8116245D.png",
+        "images/1791397303974-IMG_7017.jpeg",
+        "images/1791397307164-IMG_7018.jpeg",
+        "images/1791397310659-IMG_7031.jpeg",
+        "images/1791397312260-IMG_7025.jpeg",
+        "images/1791397315654-IMG_7013.jpeg"
+      ]
+    },
+    {
       "titre": "Bureaux - 256 m2",
       "type": "vente",
       "statut": "Vendu",
