@@ -1,6 +1,36 @@
 {
   "biens": [
     {
+      "titre": "Villa contemporaine - 142 m2",
+      "type": "vente",
+      "statut": "Exclusivité",
+      "prix": "375 000 €",
+      "localisation": "FRUGERES-LES-MINES · 43250",
+      "surface": "142 m²",
+      "surface_parcelle": "",
+      "chambres": "3",
+      "salles_de_bain": "2",
+      "chauffage": "Poêle à granules",
+      "dpe": "C",
+      "hors_marche": false,
+      "description": "L’agence Andrea Bernard immobilier vous présente en exclusivité cette somptueuse propriété individuelle idéalement située sur la commune de Frugères les Mines.\n\nDéveloppant une superficie habitable de cent quarante deux mètres carrés aux finitions soignées, cette demeure d’exception propose trois chambres élégantes ainsi qu’un espace bureau parfaitement adapté à vos exigences professionnelles.\n\nL’espace de vie comprend une cuisine entièrement équipée ainsi que deux espaces d’eau raffinés composés d’une salle de bains et d’une salle d’eau.\n\nUn poêle à granulés vient parfaire cette atmosphère chaleureuse tout en garantissant un confort énergétique optimal classé C\nÉrigée sur une magnifique parcelle paysagée de plus de mille cent mètres carrés, cette propriété dévoile un extérieur remarquable sublimé par une grande cour privative et un double garage.\n\nVéritable invitation au bien être et à la détente, une superbe piscine chauffée habillée de nobles margelles en travertin promet d’inoubliables moments de convivialité\nProposé au prix de trois cent soixante quinze mille euros, ce bien rare sur le marché saura séduire les acquéreurs les plus exigeants en quête d’un cadre de vie privilégié\nPour de plus amples renseignements ou pour organiser une visite privée, nous vous invitons à nous contacter directement par message privé afin de concrétiser votre futur projet immobilier.",
+      "photo": "images/1791643616774-IMG_7218.jpeg",
+      "photos": [
+        "images/1791643616774-IMG_7218.jpeg",
+        "images/1791643618419-20260821_180530.jpeg",
+        "images/1791643620125-20260822_143544.jpeg",
+        "images/1791643622090-20260822_143609.jpeg",
+        "images/1791643624098-IMG_4645.jpeg",
+        "images/1791643626460-IMG_4039.jpeg",
+        "images/1791643629512-IMG_4029.jpeg",
+        "images/1791643631950-IMG_4032.jpeg",
+        "images/1791643634303-IMG_4024.jpeg",
+        "images/1791643637140-IMG_4035.jpeg",
+        "images/1791643639704-IMG_2353.jpeg",
+        "images/1791643641897-IMG_4036.jpeg"
+      ]
+    },
+    {
       "titre": "Maison individuelle - 142 m2",
       "type": "vente",
       "statut": "Exclusivité",
