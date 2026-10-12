@@ -1,6 +1,34 @@
 {
   "biens": [
     {
+      "titre": "Charmante maison - 162 m2",
+      "type": "vente",
+      "statut": "Exclusivité",
+      "prix": "310 000 €",
+      "localisation": "SOLIGNAT · 63500",
+      "surface": "162 m²",
+      "surface_parcelle": "944 m²",
+      "chambres": "5",
+      "salles_de_bain": "3",
+      "chauffage": "Pompe à chaleur",
+      "dpe": "B",
+      "hors_marche": false,
+      "description": "L’agence Andrea Bernard Immobilier vous propose en exclusivité, sur la commune de Solignat, cette superbe maison de plus de 162 m² habitables offrant une vue dégagée et implantée sur un agréable terrain clos de 944 m².\nAu premier étage  vous découvrirez une pièce de vie baignée de lumière de 50m2,  avec un salon/séjour chaleureux et sa cuisine ouverte entièrement équipée.  L’étage s’ouvre sur une spacieuse terrasse offrant une vue panoramique. \nCôté nuit, l'espace propose quatre belles chambres avec de beaux volumes, dont une chambre parentale avec sa propre salle de bain, ainsi qu'une seconde salle de bain complète. \nLe rez-de-chaussée vient compléter ce bien avec  une cinquième chambre idéale pour recevoir ou créer un espace bureau, une salle de bain, une cuisine d’été  et un grand garage.  \nCette maison spacieuse, lumineuse et économe bénéficie d'un excellent DPE en classe B (dépenses énergétiques estimées entre 1 440 € et 2 010 € par an), grâce notamment à un chauffage par pompe à chaleur.\nPrix : 310 000 € FAI",
+      "photo": "images/1791836715222-IMG_7691.jpeg",
+      "photos": [
+        "images/1791836715222-IMG_7691.jpeg",
+        "images/1791836717350-IMG_7658.jpeg",
+        "images/1791836719913-IMG_7657.jpeg",
+        "images/1791836723105-IMG_7650.jpeg",
+        "images/1791836725947-IMG_7647.jpeg",
+        "images/1791836728399-IMG_7646.jpeg",
+        "images/1791836731479-IMG_7644.jpeg",
+        "images/1791836734299-IMG_7643.jpeg",
+        "images/1791836736882-IMG_7640.jpeg",
+        "images/1791836739222-IMG_7654.jpeg"
+      ]
+    },
+    {
       "titre": "Villa contemporaine - 142 m2",
       "type": "vente",
       "statut": "Exclusivité",
