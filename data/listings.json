@@ -1,6 +1,34 @@
 {
   "biens": [
     {
+      "titre": "Maison de ville - 120 m2 avec cave",
+      "type": "vente",
+      "statut": "Exclusivité",
+      "prix": "179 990 €",
+      "localisation": "ISSOIRE · 63500",
+      "surface": "120 m²",
+      "surface_parcelle": "",
+      "chambres": "3",
+      "salles_de_bain": "2",
+      "chauffage": "Gaz de ville",
+      "dpe": "D",
+      "hors_marche": false,
+      "description": "L’agence Andrea Bernard Immobilier vous propose en exclusivité, idéalement située en plein cœur d’Issoire, cette maison de bourg d’environ 120 m² se distinguant par ses volumes répartis sur quatre niveaux et ses nombreuses possibilités d’aménagement.\n\nLe rez-de-chaussée accueille un salon ainsi qu’une cuisine. Au premier étage, vous découvrirez une salle d’eau, un WC indépendant et une chambre parentale disposant de sa propre salle de bains.\n\nLe deuxième étage se compose de deux grandes chambres supplémentaires. \nEnfin, le dernier niveau propose deux pièces offrant de belles possibilités d’aménagement, notamment pour la création d’un bureau, d’un espace de travail ou d’une salle d’eau complémentaire.\n\nUne cave vient compléter ce bien. Le chauffage est assuré par une installation au gaz de ville.\n\nGrâce à son agencement et à ses volumes, cette maison offre un cadre de vie modulable, adapté aussi bien à un projet de résidence principale qu’à un investissement immobilier ou de la location saisonnière.\n\nPour tout renseignement complémentaire ou pour organiser une visite, nous vous invitons à nous contacter.\n\nMontant estimé des dépenses annuelles d'énergie pour un usage standard : entre [1230 €] et [1720€ ] par an. Prix moyens des énergies indexés sur l'année [2021] (abonnements compris).",
+      "photo": "images/1791918044733-IMG_7169.jpeg",
+      "photos": [
+        "images/1791918044733-IMG_7169.jpeg",
+        "images/1791918048624-IMG_7314.jpeg",
+        "images/1791918052820-IMG_7313.jpeg",
+        "images/1791918055897-IMG_7306.jpeg",
+        "images/1791918059804-IMG_7310.jpeg",
+        "images/1791918063747-IMG_7309.jpeg",
+        "images/1791918066946-IMG_7311.jpeg",
+        "images/1791918070620-IMG_7312.jpeg",
+        "images/1791918073600-IMG_7316.jpeg",
+        "images/1791918077638-IMG_7317.jpeg"
+      ]
+    },
+    {
       "titre": "Charmante maison - 162 m2",
       "type": "vente",
       "statut": "Exclusivité",
