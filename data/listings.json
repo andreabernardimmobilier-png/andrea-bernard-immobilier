@@ -1,6 +1,31 @@
 {
   "biens": [
     {
+      "titre": "Appartement F2 bis - 30 m2",
+      "type": "vente",
+      "statut": "Exclusivité",
+      "prix": "89 990 €",
+      "localisation": "CLERMONT FERRAND · 63000",
+      "surface": "30 m²",
+      "surface_parcelle": "",
+      "chambres": "1",
+      "salles_de_bain": "1",
+      "chauffage": "Électrique",
+      "dpe": "D",
+      "hors_marche": false,
+      "description": "L’agence Andrea Bernard Immobilier vous propose en exclusivité, deux appartements, deux types F2 bis, mezzanine à la vente en plein cœur du centre-ville de Clermont-Ferrand.\n\nSitué à Clermont-Ferrand, découvrez cet appartement de 30 m² entièrement rénové, offrant un agencement optimisé et des espaces fonctionnels répartis sur plusieurs niveaux.\n\nAu rez-de-chaussée, vous trouverez une agréable pièce de vie comprenant une cuisine et un salon. À l’étage, le bien dispose d’une chambre ainsi que d’une salle d’eau. Une mezzanine complète l’ensemble et offre un espace idéal pour aménager un bureau ou un coin télétravail.\n\nL’appartement bénéficie également d’une isolation thermique par l’extérieur, un véritable atout en matière de confort.\n\nDeux appartements similaires sont proposés à la vente. Rénovés simultanément et présentant des caractéristiques équivalentes, ils peuvent être acquis individuellement ou ensemble, selon votre projet.\n\nLe présent appartement est libre de toute occupation, tandis que le second est déjà loué, offrant ainsi différentes possibilités, que ce soit pour un investissement locatif ou pour diversifier son patrimoine immobilier.\n\nPrix de vente : 169 980 € pour les deux appartements. Possibilité d’acquérir chaque appartement individuellement.\n\nPour plus d’informations ou pour organiser une visite, contactez-nous.\n\nMontant estimé des dépenses annuelles d'énergie pour un usage standard : entre [580 €] et [830 €] par an. Prix moyens des énergies indexés sur l'année [2021] (abonnements compris).",
+      "photo": "images/1793189946003-985D5BA5-CE20-4097-BD9E-230B31D5DEEF.png",
+      "photos": [
+        "images/1793189946003-985D5BA5-CE20-4097-BD9E-230B31D5DEEF.png",
+        "images/1793189949211-805049F5-A34E-41A1-9980-DA36A880694D.png",
+        "images/1793189952397-7957F9E5-42DE-4BF6-ADD0-206665573648.png",
+        "images/1793189955155-IMG_7511.jpeg",
+        "images/1793189958322-IMG_7509.jpeg",
+        "images/1793189961876-IMG_7503.jpeg",
+        "images/1793189964627-IMG_7505.jpeg"
+      ]
+    },
+    {
       "titre": "Maison de ville - 120 m2 avec cave",
       "type": "vente",
       "statut": "Exclusivité",
