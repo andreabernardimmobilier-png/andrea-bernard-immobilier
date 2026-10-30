@@ -1,6 +1,33 @@
 {
   "biens": [
     {
+      "titre": "Appartement rénové 82 m2 avec garage et cave",
+      "type": "vente",
+      "statut": "Exclusivité",
+      "prix": "179 900 €",
+      "localisation": "CHAMALIERES · 63400",
+      "surface": "82 m²",
+      "surface_parcelle": "",
+      "chambres": "3",
+      "salles_de_bain": "1",
+      "chauffage": "Gaz",
+      "dpe": "E",
+      "hors_marche": false,
+      "description": "EXCLUSIVITÉ | CHAMALIÈRES – APPARTEMENT F4 RÉNOVÉ AVEC VUE SUR LA CATHÉDRALE\n\nÀ Chamalières, dans un secteur recherché, Andrea Bernard Immobilier vous propose en exclusivité cet appartement F4 de 82,55 m², entièrement rénové, qui conjugue élégance, luminosité et confort au quotidien.\n\nRénové intégralement du sol au plafond, avec notamment une réfection de l’installation électrique, ce bien offre un intérieur soigné et prêt à vivre.\n\nVous profiterez de volumes généreux et d’une belle luminosité : appartement doté d’une lumière traversante.\n\nL’appartement dispose de trois grandes chambres lumineuses, agrémentées de nombreux dressings, offrant des espaces de rangement particulièrement appréciables.\n\nLa pièce de vie et les différents espaces bénéficient d’un cadre agréable, tandis que la magnifique vue sur la cathédrale apporte une véritable singularité à ce bien.\n\nCôté confort, vous profiterez également d’une salle d’eau contemporaine équipée d’une douche à l’italienne.\nWC indépendant.\n\nLe chauffage est assuré par un système au gaz.\n\nPour compléter les prestations, cet appartement dispose de deux espaces privatifs particulièrement recherchés :\n\n• Un garage avec porte motorisée, pour un stationnement pratique et sécurisé.\n\n• Une cave, idéale pour le stockage.\n\nLes atouts du bien\n\n* 82,55 m² habitables\n* Trois grandes chambres lumineuses\n* Nombreux dressings et rangements\n* Rénovation complète du sol au plafond\n* Salle d’eau avec douche à l’italienne\n* WC séparé\n* Chauffage au gaz\n* Magnifique vue sur la cathédrale\n* Garage motorisé et cave\n* DPE : E\n\nPrix de vente : 179 900 € frais d’agence inclus.\n\nUne rénovation complète, de beaux volumes, une vue remarquable et des annexes appréciables : une opportunité à découvrir dans un secteur prisé de Chamalières.\n\nUne exclusivité Andrea Bernard Immobilier.\n\nContactez-nous pour davantage d’informations ou pour organiser une visite.\n\nMontant estimé des dépenses annuelles d'énergie pour un usage standard : entre [2320 €] et [3180 €] par an indexées aux années 2021, 2022 et 2023 (abonnements compris",
+      "photo": "images/1793357017086-99199AA8-D7BC-43D0-9676-8A58DD209A87.png",
+      "photos": [
+        "images/1793357017086-99199AA8-D7BC-43D0-9676-8A58DD209A87.png",
+        "images/1793357019847-IMG_7785.jpeg",
+        "images/1793357022774-IMG_7787.jpeg",
+        "images/1793357026618-IMG_7786.jpeg",
+        "images/1793357029542-IMG_7790.jpeg",
+        "images/1793357032515-IMG_7793.jpeg",
+        "images/1793357035700-IMG_7792.jpeg",
+        "images/1793357038410-IMG_7799.jpeg",
+        "images/1793357040987-IMG_7796.jpeg"
+      ]
+    },
+    {
       "titre": "Appartement F2 bis - 30 m2",
       "type": "vente",
       "statut": "Exclusivité",
