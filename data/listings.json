@@ -1,6 +1,32 @@
 {
   "biens": [
     {
+      "titre": "Immeuble de rapport 8 lots",
+      "type": "vente",
+      "statut": "Sous compromis",
+      "prix": "560 000 €",
+      "localisation": "ISSOIRE · 63500",
+      "surface": "",
+      "surface_parcelle": "",
+      "chambres": "",
+      "salles_de_bain": "",
+      "chauffage": "",
+      "dpe": "D",
+      "hors_marche": false,
+      "description": "[NOUVELLE EXCLUSIVITÉ]\n\n🏢 Immeuble de rapport - 8 lots \n🏠 8 Appartement : studio | 5 F2 et 2 F3  \n⛽️ DPE : D - E \n🏎️ Dépendances et caves \n💶 560 000 €\n📍 ISSOIRE - 63500",
+      "photo": "images/1793772299927-IMG_5926.jpeg",
+      "photos": [
+        "images/1793772299927-IMG_5926.jpeg",
+        "images/1793772303185-IMG_3327.jpeg",
+        "images/1793772306384-IMG_7122.jpeg",
+        "images/1793772309343-IMG_7118.jpeg",
+        "images/1793772312504-IMG_4797.jpeg",
+        "images/1793772314737-IMG_4799.jpeg",
+        "images/1793772317471-IMG_4800.jpeg",
+        "images/1793772319996-IMG_4016.jpeg"
+      ]
+    },
+    {
       "titre": "Duplex meublé 59 m2 avec terrasse et parking",
       "type": "location",
       "statut": "",
