@@ -1,6 +1,25 @@
 {
   "biens": [
     {
+      "titre": "Maison de plain-pied 90 m2 hors d’eau hors d’air",
+      "type": "vente",
+      "statut": "Exclusivité",
+      "prix": "110 000 €",
+      "localisation": "SAINTE FLORINE · 43250",
+      "surface": "90 m²",
+      "surface_parcelle": "",
+      "chambres": "",
+      "salles_de_bain": "",
+      "chauffage": "",
+      "dpe": "",
+      "hors_marche": false,
+      "description": "🏡 NOUVEAUTÉ EN EXCLUSIVITÉ – SAINTE-FLORINE\n\nUne belle opportunité pour concrétiser votre projet immobilier !\n\nNous vous proposons de découvrir cette maison de plain-pied d’environ 90 m² habitables, actuellement hors d’eau / hors d’air.\n\nElle dispose d’un garage attenant et d’un terrain de petite superficie, idéal pour profiter d’un extérieur sans avoir trop d’entretien.\n\n✨ Les caractéristiques :\n\n* Environ 90 m² habitables\n* Maison de plain-pied\n* Garage attenant\n* Petit terrain\n* Possibilité d’aménager jusqu’à 3 chambres selon votre projet\n* Construction hors d’eau / hors d’air\n\n💰 Prix : 110 000 € frais d’agence inclus\n\nUn bien à personnaliser selon vos envies, avec l’avantage de pouvoir imaginer et réaliser votre intérieur à votre goût !\n\n📍 Sainte-Florine - 43250\n\n🔑 À découvrir exclusivement chez Andrea Bernard Immobilier.\n\n📞 Contactez-nous pour obtenir davantage d’informations ou organiser une visite.",
+      "photo": "images/1793801867903-IMG_8008.jpeg",
+      "photos": [
+        "images/1793801867903-IMG_8008.jpeg"
+      ]
+    },
+    {
       "titre": "Immeuble de rapport 8 lots",
       "type": "vente",
       "statut": "Sous compromis",
